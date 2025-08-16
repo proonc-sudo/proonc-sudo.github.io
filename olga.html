@@ -207,7 +207,7 @@
             box-shadow: 0 5px 15px var(--sombra);
             transition: all 0.3s ease;
             position: relative;
-            height: 380px;
+            min-height: 500px; /* Aumentado para asegurar espacio */
         }
 
         .gift-card.expanded {
@@ -244,7 +244,7 @@
         }
 
         .gift-image {
-            height: 200px;
+            height: 250px; /* Aumentado para mejor visualización */
             width: 100%;
             background-size: cover;
             background-position: center;
@@ -254,6 +254,9 @@
 
         .gift-content {
             padding: 20px;
+            min-height: 250px; /* Aseguramos espacio para el contenido */
+            position: relative;
+            padding-bottom: 70px; /* Espacio para el botón */
         }
 
         .gift-content h3 {
@@ -621,7 +624,7 @@
                 <div class="gift-grid">
                     <!-- Gift Option 1 -->
                     <div class="gift-card" id="gift-1">
-                        <div class="gift-image" style="background-image: url('https://source.unsplash.com/random/800x600/?hotel,spa');" onclick="openExternalLink('https://www.molinodealcuneza.com')"></div>
+                        <div class="gift-image" style="background-image: url('https://proonc-sudo.github.io/r1.jpeg');" onclick="openExternalLink('https://www.molinodealcuneza.com')"></div>
                         <div class="gift-content">
                             <h3 onclick="openExternalLink('https://www.molinodealcuneza.com')"><i class="fas fa-wind"></i> Molino de Alcuneza</h3>
                             <p>Un antiguo molino restaurado con encanto en Sigüenza. Relais & Châteaux con spa y gastronomía excepcional.</p>
@@ -666,7 +669,7 @@
 
                     <!-- Gift Option 2 -->
                     <div class="gift-card" id="gift-2">
-                        <div class="gift-image" style="background-image: url('https://source.unsplash.com/random/800x600/?boutique,hotel');"></div>
+                        <div class="gift-image" style="background-image: url('https://proonc-sudo.github.io/r2.jpeg');"></div>
                         <div class="gift-content">
                             <h3><i class="fas fa-spa"></i> El Bálsamo</h3>
                             <p>Hotel boutique en un pueblo medieval de Cuenca. Ambiente íntimo con encanto histórico y vistas espectaculares.</p>
@@ -712,7 +715,7 @@
 
                     <!-- Gift Option 3 -->
                     <div class="gift-card" id="gift-3">
-                        <div class="gift-image" style="background-image: url('https://source.unsplash.com/random/800x600/?spa,massage');"></div>
+                        <div class="gift-image" style="background-image: url('https://proonc-sudo.github.io/r3.jpeg');"></div>
                         <div class="gift-content">
                             <h3><i class="fas fa-leaf"></i> Ritual Tailandia</h3>
                             <p>Una escapada de lujo a Tailandia... sin salir de Madrid. Experiencia spa con masajes auténticos tailandeses.</p>
@@ -758,7 +761,7 @@
 
                     <!-- Gift Option 4 -->
                     <div class="gift-card" id="gift-4">
-                        <div class="gift-image" style="background-image: url('https://source.unsplash.com/random/800x600/?cabin,nature');"></div>
+                        <div class="gift-image" style="background-image: url('https://proonc-sudo.github.io/r4.jpeg');"></div>
                         <div class="gift-content">
                             <h3><i class="fas fa-tree"></i> Vaquería Cantaelgallo</h3>
                             <p>Alojamiento rural en plena naturaleza de Gredos. Cabañas con encanto y vistas a la sierra.</p>
@@ -804,7 +807,7 @@
 
                     <!-- Gift Option 5 -->
                     <div class="gift-card" id="gift-5">
-                        <div class="gift-image" style="background-image: url('https://source.unsplash.com/random/800x600/?glamping,jacuzzi');"></div>
+                        <div class="gift-image" style="background-image: url('https://proonc-sudo.github.io/r5.jpeg');"></div>
                         <div class="gift-content">
                             <h3><i class="fas fa-campground"></i> Glamping El Regajo</h3>
                             <p>Domo con vistas espectaculares en el Valle del Jerte. Confort en plena naturaleza con jacuzzi privado.</p>
@@ -850,7 +853,7 @@
 
                     <!-- Gift Option 6 -->
                     <div class="gift-card" id="gift-6">
-                        <div class="gift-image" style="background-image: url('https://source.unsplash.com/random/800x600/?lake,nature');"></div>
+                        <div class="gift-image" style="background-image: url('https://proonc-sudo.github.io/r6.jpeg');"></div>
                         <div class="gift-content">
                             <h3><i class="fas fa-water"></i> Luz de Alba</h3>
                             <p>Junto a las Lagunas de Ruidera, un paraíso natural. Actividades acuáticas y naturaleza en estado puro.</p>
@@ -896,7 +899,7 @@
 
                     <!-- Gift Option 7 -->
                     <div class="gift-card" id="gift-7">
-                        <div class="gift-image" style="background-image: url('https://source.unsplash.com/random/800x600/?birds,nature');"></div>
+                        <div class="gift-image" style="background-image: url('https://proonc-sudo.github.io/r7.jpeg');"></div>
                         <div class="gift-content">
                             <h3><i class="fas fa-feather-alt"></i> Hábitat Cigüeña Negra</h3>
                             <p>Refugio en la dehesa extremeña con hamman. Conexión con la naturaleza y avistamiento de aves.</p>
@@ -942,7 +945,7 @@
 
                     <!-- Gift Option 8 -->
                     <div class="gift-card" id="gift-8">
-                        <div class="gift-image" style="background-image: url('https://source.unsplash.com/random/800x600/?yurt,mongolia');"></div>
+                        <div class="gift-image" style="background-image: url('https://proonc-sudo.github.io/r8.jpeg');"></div>
                         <div class="gift-content">
                             <h3><i class="fas fa-moon"></i> Yurta Mongola</h3>
                             <p>Alojamiento único en una auténtica yurta mongola. Experiencia étnica con todas las comodidades.</p>
@@ -988,7 +991,7 @@
 
                     <!-- Gift Option 9 -->
                     <div class="gift-card" id="gift-9">
-                        <div class="gift-image" style="background-image: url('https://source.unsplash.com/random/800x600/?luxury,hotel');"></div>
+                        <div class="gift-image" style="background-image: url('https://proonc-sudo.github.io/r9.jpeg');"></div>
                         <div class="gift-content">
                             <h3><i class="fas fa-crown"></i> Hotel Valdepalacios</h3>
                             <p>Hotel 5* Gran Lujo en Toledo con spa y safari. Experiencia completa de relax y aventura.</p>
@@ -1034,7 +1037,7 @@
 
                     <!-- Gift Option 10 -->
                     <div class="gift-card" id="gift-10">
-                        <div class="gift-image" style="background-image: url('https://source.unsplash.com/random/800x600/?asian,garden');"></div>
+                        <div class="gift-image" style="background-image: url('https://proonc-sudo.github.io/r10.jpeg');"></div>
                         <div class="gift-content">
                             <h3><i class="fas fa-spa"></i> Asia Gardens</h3>
                             <p>Mejor hotel spa de España 2024. Jardines tropicales y experiencia thai de lujo en Alicante.</p>
@@ -1080,7 +1083,7 @@
 
                     <!-- Gift Option 11 -->
                     <div class="gift-card" id="gift-11">
-                        <div class="gift-image" style="background-image: url('https://source.unsplash.com/random/800x600/?mountain,cabin');"></div>
+                        <div class="gift-image" style="background-image: url('https://proonc-sudo.github.io/r11.jpeg');"></div>
                         <div class="gift-content">
                             <h3><i class="fas fa-mountain"></i> Sierra Morena</h3>
                             <p>Cabañas con vistas en plena Sierra Morena. Naturaleza, senderismo y desconexión absoluta.</p>
