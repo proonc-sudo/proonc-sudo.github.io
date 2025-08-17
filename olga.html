@@ -452,12 +452,24 @@
             content: '"';
             font-family: 'Dancing Script', cursive;
             font-size: 5rem;
-            color: var(--rosa);
+            color: var(--rosa-oscuro);
             position: absolute;
             top: -10px;
             left: 10px;
             line-height: 1;
-            opacity: 0.3;
+            opacity: 0.6;
+        }
+
+        .quote::after {
+            content: '"';
+            font-family: 'Dancing Script', cursive;
+            font-size: 5rem;
+            color: var(--rosa-oscuro);
+            position: absolute;
+            bottom: -40px;
+            right: 10px;
+            line-height: 1;
+            opacity: 0.6;
         }
 
         .quote-text {
@@ -466,6 +478,8 @@
             margin-bottom: 15px;
             position: relative;
             z-index: 1;
+            color: var(--vino);
+            font-weight: 500;
         }
 
         .quote-author {
@@ -535,6 +549,67 @@
             100% { transform: scale(1); }
         }
 
+        /* Momentazos section */
+        .collage-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            margin: 30px auto;
+            max-width: 800px;
+        }
+
+        .collage-img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+            transition: transform 0.3s;
+        }
+
+        .collage-img:hover {
+            transform: scale(1.03);
+        }
+
+        .heart-button {
+            display: block;
+            margin: 30px auto;
+            background: var(--rosa-oscuro);
+            color: white;
+            border: none;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            font-size: 1.5rem;
+            cursor: pointer;
+            transition: all 0.3s;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+        }
+
+        .heart-button:hover {
+            background: var(--vino);
+            transform: scale(1.1);
+        }
+
+        /* Reset button */
+        .reset-ratings {
+            display: block;
+            margin: 20px auto 0;
+            background: var(--texto);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 30px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background 0.3s;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        }
+
+        .reset-ratings:hover {
+            background: #333;
+        }
+
         /* Responsive */
         @media (max-width: 1024px) {
             .container {
@@ -549,6 +624,10 @@
             
             .gift-grid {
                 grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            }
+
+            .collage-container {
+                grid-template-columns: repeat(2, 1fr);
             }
         }
 
@@ -572,6 +651,10 @@
             .gift-card.expanded {
                 width: 95%;
                 max-height: 85vh;
+            }
+
+            .collage-container {
+                grid-template-columns: 1fr;
             }
         }
     </style>
@@ -669,9 +752,9 @@
 
                     <!-- Gift Option 2 -->
                     <div class="gift-card" id="gift-2">
-                        <div class="gift-image" style="background-image: url('https://proonc-sudo.github.io/r2.jpeg');"></div>
+                        <div class="gift-image" style="background-image: url('https://proonc-sudo.github.io/r2.jpeg');" onclick="openExternalLink('https://www.molinodealcuneza.com')"></div>
                         <div class="gift-content">
-                            <h3><i class="fas fa-spa"></i> El Bálsamo</h3>
+                            <h3 onclick="openExternalLink('https://www.molinodealcuneza.com')"><i class="fas fa-spa"></i> El Bálsamo</h3>
                             <p>Hotel boutique en un pueblo medieval de Cuenca. Ambiente íntimo con encanto histórico y vistas espectaculares.</p>
                             <div class="full-description">
                                 <p>El Bálsamo es un refugio de paz ubicado en el corazón de Belmonte, un pueblo medieval de Cuenca. Características:</p>
@@ -715,9 +798,9 @@
 
                     <!-- Gift Option 3 -->
                     <div class="gift-card" id="gift-3">
-                        <div class="gift-image" style="background-image: url('https://proonc-sudo.github.io/r3.jpeg');"></div>
+                        <div class="gift-image" style="background-image: url('https://proonc-sudo.github.io/r3.jpeg');" onclick="openExternalLink('https://www.molinodealcuneza.com')"></div>
                         <div class="gift-content">
-                            <h3><i class="fas fa-leaf"></i> Ritual Tailandia</h3>
+                            <h3 onclick="openExternalLink('https://www.molinodealcuneza.com')"><i class="fas fa-leaf"></i> Ritual Tailandia</h3>
                             <p>Una escapada de lujo a Tailandia... sin salir de Madrid. Experiencia spa con masajes auténticos tailandeses.</p>
                             <div class="full-description">
                                 <p>El Ritual de Tailandia en The Organic Spa es una experiencia de bienestar que te transportará a Oriente:</p>
@@ -761,9 +844,9 @@
 
                     <!-- Gift Option 4 -->
                     <div class="gift-card" id="gift-4">
-                        <div class="gift-image" style="background-image: url('https://proonc-sudo.github.io/r4.jpeg');"></div>
+                        <div class="gift-image" style="background-image: url('https://proonc-sudo.github.io/r4.jpeg');" onclick="openExternalLink('https://www.molinodealcuneza.com')"></div>
                         <div class="gift-content">
-                            <h3><i class="fas fa-tree"></i> Vaquería Cantaelgallo</h3>
+                            <h3 onclick="openExternalLink('https://www.molinodealcuneza.com')"><i class="fas fa-tree"></i> Vaquería Cantaelgallo</h3>
                             <p>Alojamiento rural en plena naturaleza de Gredos. Cabañas con encanto y vistas a la sierra.</p>
                             <div class="full-description">
                                 <p>La Vaquería Cantaelgallo es un refugio en plena naturaleza con:</p>
@@ -807,9 +890,9 @@
 
                     <!-- Gift Option 5 -->
                     <div class="gift-card" id="gift-5">
-                        <div class="gift-image" style="background-image: url('https://proonc-sudo.github.io/r5.jpeg');"></div>
+                        <div class="gift-image" style="background-image: url('https://proonc-sudo.github.io/r5.jpeg');" onclick="openExternalLink('https://www.molinodealcuneza.com')"></div>
                         <div class="gift-content">
-                            <h3><i class="fas fa-campground"></i> Glamping El Regajo</h3>
+                            <h3 onclick="openExternalLink('https://www.molinodealcuneza.com')"><i class="fas fa-campground"></i> Glamping El Regajo</h3>
                             <p>Domo con vistas espectaculares en el Valle del Jerte. Confort en plena naturaleza con jacuzzi privado.</p>
                             <div class="full-description">
                                 <p>Glamping El Regajo ofrece una experiencia única de lujo en la naturaleza:</p>
@@ -853,9 +936,9 @@
 
                     <!-- Gift Option 6 -->
                     <div class="gift-card" id="gift-6">
-                        <div class="gift-image" style="background-image: url('https://proonc-sudo.github.io/r6.jpeg');"></div>
+                        <div class="gift-image" style="background-image: url('https://proonc-sudo.github.io/r6.jpeg');" onclick="openExternalLink('https://www.molinodealcuneza.com')"></div>
                         <div class="gift-content">
-                            <h3><i class="fas fa-water"></i> Luz de Alba</h3>
+                            <h3 onclick="openExternalLink('https://www.molinodealcuneza.com')"><i class="fas fa-water"></i> Luz de Alba</h3>
                             <p>Junto a las Lagunas de Ruidera, un paraíso natural. Actividades acuáticas y naturaleza en estado puro.</p>
                             <div class="full-description">
                                 <p>Luz de Alba es un hotel rural situado junto al Parque Natural de las Lagunas de Ruidera:</p>
@@ -899,9 +982,9 @@
 
                     <!-- Gift Option 7 -->
                     <div class="gift-card" id="gift-7">
-                        <div class="gift-image" style="background-image: url('https://proonc-sudo.github.io/r7.jpeg');"></div>
+                        <div class="gift-image" style="background-image: url('https://proonc-sudo.github.io/r7.jpeg');" onclick="openExternalLink('https://www.molinodealcuneza.com')"></div>
                         <div class="gift-content">
-                            <h3><i class="fas fa-feather-alt"></i> Hábitat Cigüeña Negra</h3>
+                            <h3 onclick="openExternalLink('https://www.molinodealcuneza.com')"><i class="fas fa-feather-alt"></i> Hábitat Cigüeña Negra</h3>
                             <p>Refugio en la dehesa extremeña con hamman. Conexión con la naturaleza y avistamiento de aves.</p>
                             <div class="full-description">
                                 <p>Hábitat Cigüeña Negra es un proyecto de turismo sostenible en plena dehesa extremeña:</p>
@@ -945,9 +1028,9 @@
 
                     <!-- Gift Option 8 -->
                     <div class="gift-card" id="gift-8">
-                        <div class="gift-image" style="background-image: url('https://proonc-sudo.github.io/r8.jpeg');"></div>
+                        <div class="gift-image" style="background-image: url('https://proonc-sudo.github.io/r8.jpeg');" onclick="openExternalLink('https://www.molinodealcuneza.com')"></div>
                         <div class="gift-content">
-                            <h3><i class="fas fa-moon"></i> Yurta Mongola</h3>
+                            <h3 onclick="openExternalLink('https://www.molinodealcuneza.com')"><i class="fas fa-moon"></i> Yurta Mongola</h3>
                             <p>Alojamiento único en una auténtica yurta mongola. Experiencia étnica con todas las comodidades.</p>
                             <div class="full-description">
                                 <p>El Jardín de las Delicias ofrece una experiencia única en auténticas yurtas mongolas:</p>
@@ -991,9 +1074,9 @@
 
                     <!-- Gift Option 9 -->
                     <div class="gift-card" id="gift-9">
-                        <div class="gift-image" style="background-image: url('https://proonc-sudo.github.io/r9.jpeg');"></div>
+                        <div class="gift-image" style="background-image: url('https://proonc-sudo.github.io/r9.jpeg');" onclick="openExternalLink('https://www.molinodealcuneza.com')"></div>
                         <div class="gift-content">
-                            <h3><i class="fas fa-crown"></i> Hotel Valdepalacios</h3>
+                            <h3 onclick="openExternalLink('https://www.molinodealcuneza.com')"><i class="fas fa-crown"></i> Hotel Valdepalacios</h3>
                             <p>Hotel 5* Gran Lujo en Toledo con spa y safari. Experiencia completa de relax y aventura.</p>
                             <div class="full-description">
                                 <p>El Hotel Valdepalacios es un resort de lujo en plena naturaleza toledana:</p>
@@ -1037,9 +1120,9 @@
 
                     <!-- Gift Option 10 -->
                     <div class="gift-card" id="gift-10">
-                        <div class="gift-image" style="background-image: url('https://proonc-sudo.github.io/r10.jpeg');"></div>
+                        <div class="gift-image" style="background-image: url('https://proonc-sudo.github.io/r10.jpeg');" onclick="openExternalLink('https://www.molinodealcuneza.com')"></div>
                         <div class="gift-content">
-                            <h3><i class="fas fa-spa"></i> Asia Gardens</h3>
+                            <h3 onclick="openExternalLink('https://www.molinodealcuneza.com')"><i class="fas fa-spa"></i> Asia Gardens</h3>
                             <p>Mejor hotel spa de España 2024. Jardines tropicales y experiencia thai de lujo en Alicante.</p>
                             <div class="full-description">
                                 <p>Asia Gardens Hotel & Thai Spa es un oasis de lujo inspirado en los jardines asiáticos:</p>
@@ -1083,9 +1166,9 @@
 
                     <!-- Gift Option 11 -->
                     <div class="gift-card" id="gift-11">
-                        <div class="gift-image" style="background-image: url('https://proonc-sudo.github.io/r11.jpeg');"></div>
+                        <div class="gift-image" style="background-image: url('https://proonc-sudo.github.io/r11.jpeg');" onclick="openExternalLink('https://www.molinodealcuneza.com')"></div>
                         <div class="gift-content">
-                            <h3><i class="fas fa-mountain"></i> Sierra Morena</h3>
+                            <h3 onclick="openExternalLink('https://www.molinodealcuneza.com')"><i class="fas fa-mountain"></i> Sierra Morena</h3>
                             <p>Cabañas con vistas en plena Sierra Morena. Naturaleza, senderismo y desconexión absoluta.</p>
                             <div class="full-description">
                                 <p>La Dehesa Experiences ofrece cabañas de lujo en plena Sierra Morena:</p>
@@ -1129,6 +1212,7 @@
                 </div>
 
                 <button id="show-results" class="show-results">Ver mis puntuaciones</button>
+                <button id="reset-ratings" class="reset-ratings">Resetear puntuaciones</button>
                 
                 <div id="results-panel" class="results-panel">
                     <h3>Tus preferencias</h3>
@@ -1199,9 +1283,23 @@
 
             <!-- Moments Section -->
             <section id="moments-section" class="section">
-                <div style="text-align: center; padding: 50px;">
+                <div style="text-align: center; padding: 20px;">
                     <h2 style="font-family: 'Dancing Script', cursive; color: var(--vino); margin-bottom: 20px;">Momentazos</h2>
-                    <p>Próximamente... una galería de nuestros mejores momentos juntos.</p>
+                    <p>Algunos de nuestros mejores momentos juntos:</p>
+                    
+                    <div class="collage-container" id="collage">
+                        <img src="https://proonc-sudo.github.io/r1.jpeg" alt="Momentazo 1" class="collage-img">
+                        <img src="https://proonc-sudo.github.io/r2.jpeg" alt="Momentazo 2" class="collage-img">
+                        <img src="https://proonc-sudo.github.io/r3.jpeg" alt="Momentazo 3" class="collage-img">
+                        <img src="https://proonc-sudo.github.io/r4.jpeg" alt="Momentazo 4" class="collage-img">
+                        <img src="https://proonc-sudo.github.io/r5.jpeg" alt="Momentazo 5" class="collage-img">
+                        <img src="https://proonc-sudo.github.io/r6.jpeg" alt="Momentazo 6" class="collage-img">
+                    </div>
+                    
+                    <button class="heart-button" onclick="changeCollage()">
+                        <i class="fas fa-heart"></i>
+                    </button>
+                    
                     <a href="#" class="back-button" onclick="showSection('gifts-section'); return false;"><i class="fas fa-arrow-left"></i> Volver a los regalos</a>
                 </div>
             </section>
@@ -1210,7 +1308,12 @@
             <section id="wishes-section" class="section">
                 <div style="text-align: center; padding: 50px;">
                     <h2 style="font-family: 'Dancing Script', cursive; color: var(--vino); margin-bottom: 20px;">Metas y deseos</h2>
-                    <p>Próximamente... todos los sueños que queremos cumplir juntos.</p>
+                    <p style="font-size: 1.2rem; line-height: 1.6; max-width: 600px; margin: 0 auto 30px;">
+                        Pide tres deseos a tres nudos sobre el cordel que te van a dar y desátalos cuando se cumplan.
+                    </p>
+                    <p style="font-size: 1.5rem; color: var(--vino); font-weight: bold; margin-top: 30px;">
+                        Te quiero
+                    </p>
                     <a href="#" class="back-button" onclick="showSection('gifts-section'); return false;"><i class="fas fa-arrow-left"></i> Volver a los regalos</a>
                 </div>
             </section>
@@ -1329,6 +1432,29 @@
                 resultsPanel.scrollIntoView({ behavior: 'smooth' });
             });
 
+            // Configurar botón para resetear puntuaciones
+            const resetBtn = document.getElementById('reset-ratings');
+            resetBtn.addEventListener('click', function() {
+                // Resetear todas las estrellas
+                document.querySelectorAll('.star').forEach(star => {
+                    star.textContent = '☆';
+                    star.classList.remove('active');
+                });
+                
+                // Resetear valores numéricos
+                document.querySelectorAll('.rating-value').forEach(el => {
+                    el.textContent = '0';
+                });
+                
+                // Limpiar localStorage
+                ratings = {};
+                localStorage.removeItem('olgaRatings');
+                
+                // Ocultar panel de resultados
+                resultsPanel.style.display = 'none';
+                showResultsBtn.textContent = 'Ver mis puntuaciones';
+            });
+
             // Configurar menú de navegación - VERSIÓN CORREGIDA
             const menuLinks = document.querySelectorAll('.menu a');
             menuLinks.forEach(link => {
@@ -1387,6 +1513,31 @@
         // Abrir enlace externo en nueva pestaña
         function openExternalLink(url) {
             window.open(url, '_blank');
+        }
+
+        // Cambiar el collage de fotos
+        function changeCollage() {
+            const collage = document.getElementById('collage');
+            const images = [
+                'https://proonc-sudo.github.io/r7.jpeg',
+                'https://proonc-sudo.github.io/r8.jpeg',
+                'https://proonc-sudo.github.io/r9.jpeg',
+                'https://proonc-sudo.github.io/r10.jpeg',
+                'https://proonc-sudo.github.io/r11.jpeg',
+                'https://proonc-sudo.github.io/r1.jpeg'
+            ];
+            
+            // Mezclar las imágenes
+            for (let i = images.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [images[i], images[j]] = [images[j], images[i]];
+            }
+            
+            // Actualizar las imágenes en el collage
+            const imgElements = collage.querySelectorAll('img');
+            imgElements.forEach((img, index) => {
+                img.src = images[index % images.length];
+            });
         }
     </script>
 </body>
