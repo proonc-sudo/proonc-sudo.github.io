@@ -1513,37 +1513,68 @@
             window.open(url, '_blank');
         }
 
-        // Generar collage de fotos
-        function generateCollage() {
-            const collage = document.getElementById('collage');
-            collage.innerHTML = '';
-            
-            // Asumimos que hay 60 imágenes en la carpeta images con nombres secuenciales
-            const totalImages = 60;
-            const imagesToShow = 30; // Mostrar solo un subconjunto para mejor rendimiento
-            
-            // Seleccionar imágenes aleatorias
-            const selectedImages = [];
-            for (let i = 0; i < imagesToShow; i++) {
-                const randomNum = Math.floor(Math.random() * totalImages) + 1;
-                selectedImages.push(`images/image${randomNum}.jpg`);
-            }
-            
-            // Crear elementos de imagen con clases aleatorias para diferentes tamaños
-            selectedImages.forEach(imgSrc => {
-                const img = document.createElement('img');
-                img.src = imgSrc;
-                img.className = 'collage-img';
-                img.alt = 'Momentazo';
-                
-                // Asignar clase de tamaño aleatorio
-                const sizeClasses = ['', 'wide', 'tall', 'big'];
-                const randomSize = sizeClasses[Math.floor(Math.random() * sizeClasses.length)];
-                if (randomSize) img.classList.add(randomSize);
-                
-                collage.appendChild(img);
-            });
+ // ===== REEMPLAZAR DESDE ESTA LÍNEA ===== //
+function generateCollage() {
+    const collage = document.getElementById('collage');
+    if (!collage) return;
+
+    // Configuración exacta (¡ajusta estos valores!)
+    const IMAGES_CONFIG = {
+        total: 53,                  // Número total de imágenes
+        toShow: 20,                 // Imágenes a mostrar
+        folderPath: 'images/',      // Ruta relativa a la carpeta
+        namePattern: 'image',       // Patrón del nombre (sin número)
+        extension: '.jpeg'          // Extensión exacta (incluye el punto)
+    };
+
+    // Limpia el collage y muestra carga
+    collage.innerHTML = '<div class="loading">Preparando tus momentos especiales...</div>';
+    
+    // Genera números aleatorios únicos
+    const getUniqueRandomNumbers = () => {
+        const numbers = new Set();
+        while (numbers.size < IMAGES_CONFIG.toShow) {
+            const num = Math.floor(Math.random() * IMAGES_CONFIG.total) + 1;
+            numbers.add(num);
         }
+        return [...numbers];
+    };
+
+    // Crea y carga las imágenes
+    const loadedImages = [];
+    const randomNumbers = getUniqueRandomNumbers();
+
+    randomNumbers.forEach(num => {
+        const img = new Image();
+        img.src = `${IMAGES_CONFIG.folderPath}${IMAGES_CONFIG.namePattern}${num}${IMAGES_CONFIG.extension}`;
+        img.alt = `Momento ${num}`;
+        img.className = `collage-img ${['', 'wide', 'tall', 'big'][Math.floor(Math.random() * 4)]}`;
+        
+        // Manejo de carga/error
+        img.onload = () => {
+            loadedImages.push(img);
+            updateCollage();
+        };
+        
+        img.onerror = () => {
+            console.error(`❌ Error al cargar: ${img.src}`);
+            updateCollage();
+        };
+    });
+
+    // Actualiza el collage cuando las imágenes cargan
+    const updateCollage = () => {
+        if (loadedImages.length === randomNumbers.length) {
+            collage.innerHTML = '';
+            loadedImages.forEach(img => collage.appendChild(img));
+            
+            // Depuración: muestra las rutas cargadas
+            console.log('📸 Imágenes cargadas correctamente:');
+            loadedImages.forEach(img => console.log(img.src));
+        }
+    };
+}
+// ===== HASTA ESTA LÍNEA ===== //
     </script>
 </body>
 </html>
