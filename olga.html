@@ -110,6 +110,8 @@
             border: 3px solid var(--rosa);
             margin: 0 auto 15px;
             background: linear-gradient(45deg, var(--rosa), var(--dorado));
+            background-size: cover;
+            background-position: center;
         }
 
         .profile h2 {
@@ -207,7 +209,7 @@
             box-shadow: 0 5px 15px var(--sombra);
             transition: all 0.3s ease;
             position: relative;
-            min-height: 500px; /* Aumentado para asegurar espacio */
+            min-height: 500px;
         }
 
         .gift-card.expanded {
@@ -244,7 +246,7 @@
         }
 
         .gift-image {
-            height: 250px; /* Aumentado para mejor visualización */
+            height: 250px;
             width: 100%;
             background-size: cover;
             background-position: center;
@@ -254,9 +256,9 @@
 
         .gift-content {
             padding: 20px;
-            min-height: 250px; /* Aseguramos espacio para el contenido */
+            min-height: 250px;
             position: relative;
-            padding-bottom: 70px; /* Espacio para el botón */
+            padding-bottom: 70px;
         }
 
         .gift-content h3 {
@@ -442,10 +444,11 @@
         .quote {
             background: white;
             border-radius: 10px;
-            padding: 30px;
-            margin-bottom: 30px;
+            padding: 40px 30px;
+            margin-bottom: 50px;
             box-shadow: 0 3px 10px rgba(0,0,0,0.1);
             position: relative;
+            min-height: 150px;
         }
 
         .quote::before {
@@ -454,8 +457,8 @@
             font-size: 5rem;
             color: var(--rosa-oscuro);
             position: absolute;
-            top: -10px;
-            left: 10px;
+            top: -5px;
+            left: 15px;
             line-height: 1;
             opacity: 0.6;
         }
@@ -466,8 +469,8 @@
             font-size: 5rem;
             color: var(--rosa-oscuro);
             position: absolute;
-            bottom: -40px;
-            right: 10px;
+            bottom: -50px;
+            right: 15px;
             line-height: 1;
             opacity: 0.6;
         }
@@ -552,43 +555,40 @@
         /* Momentazos section */
         .collage-container {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 15px;
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            grid-auto-rows: minmax(150px, auto);
+            gap: 10px;
             margin: 30px auto;
-            max-width: 800px;
+            max-width: 900px;
         }
 
         .collage-img {
             width: 100%;
-            height: 200px;
+            height: 100%;
             object-fit: cover;
-            border-radius: 10px;
+            border-radius: 8px;
             box-shadow: 0 3px 10px rgba(0,0,0,0.2);
             transition: transform 0.3s;
+            grid-row-end: span 2;
+            grid-column-end: span 1;
+        }
+
+        .collage-img.wide {
+            grid-column-end: span 2;
+        }
+
+        .collage-img.tall {
+            grid-row-end: span 3;
+        }
+
+        .collage-img.big {
+            grid-column-end: span 2;
+            grid-row-end: span 3;
         }
 
         .collage-img:hover {
             transform: scale(1.03);
-        }
-
-        .heart-button {
-            display: block;
-            margin: 30px auto;
-            background: var(--rosa-oscuro);
-            color: white;
-            border: none;
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            font-size: 1.5rem;
-            cursor: pointer;
-            transition: all 0.3s;
-            box-shadow: 0 3px 10px rgba(0,0,0,0.2);
-        }
-
-        .heart-button:hover {
-            background: var(--vino);
-            transform: scale(1.1);
+            z-index: 2;
         }
 
         /* Reset button */
@@ -664,8 +664,8 @@
         <h1>Feliz 54 Cumpleaños mi amor</h1>
         <div class="subtitle">
             <p>Una celebración especial para una persona extraordinaria.</p>
-            <p>Cada momento contigo es un regalo, gracias por compartirlos con nosotros.</p>
-            <p>Elige una experiencia inolvidable para poder celebrarlo, espero que te gusten.</p>
+            <p>Cada momento contigo es un regalo, gracias por compartirlos conmigo.</p>
+            <p>Puedes elegir una experiencia inolvidable para poder celebrarlo, espero que te gusten.</p>
         </div>
         <div class="hearts">
             <i class="fas fa-heart"></i>
@@ -678,7 +678,7 @@
         <!-- Sidebar Menu -->
         <aside class="sidebar">
             <div class="profile">
-                <div class="profile-img"></div>
+                <div class="profile-img" style="background-image: url('foto.jpeg');"></div>
                 <h2>Olga</h2>
                 <p>54 años de magia</p>
             </div>
@@ -1288,15 +1288,10 @@
                     <p>Algunos de nuestros mejores momentos juntos:</p>
                     
                     <div class="collage-container" id="collage">
-                        <img src="https://proonc-sudo.github.io/r1.jpeg" alt="Momentazo 1" class="collage-img">
-                        <img src="https://proonc-sudo.github.io/r2.jpeg" alt="Momentazo 2" class="collage-img">
-                        <img src="https://proonc-sudo.github.io/r3.jpeg" alt="Momentazo 3" class="collage-img">
-                        <img src="https://proonc-sudo.github.io/r4.jpeg" alt="Momentazo 4" class="collage-img">
-                        <img src="https://proonc-sudo.github.io/r5.jpeg" alt="Momentazo 5" class="collage-img">
-                        <img src="https://proonc-sudo.github.io/r6.jpeg" alt="Momentazo 6" class="collage-img">
+                        <!-- Las imágenes se generarán dinámicamente con JavaScript -->
                     </div>
                     
-                    <button class="heart-button" onclick="changeCollage()">
+                    <button class="heart-button" onclick="generateCollage()">
                         <i class="fas fa-heart"></i>
                     </button>
                     
@@ -1455,7 +1450,7 @@
                 showResultsBtn.textContent = 'Ver mis puntuaciones';
             });
 
-            // Configurar menú de navegación - VERSIÓN CORREGIDA
+            // Configurar menú de navegación
             const menuLinks = document.querySelectorAll('.menu a');
             menuLinks.forEach(link => {
                 link.addEventListener('click', function(e) {
@@ -1468,6 +1463,9 @@
                     this.classList.add('active');
                 });
             });
+
+            // Generar el collage inicial
+            generateCollage();
         });
 
         // Mostrar sección seleccionada
@@ -1480,7 +1478,7 @@
             document.getElementById(sectionId).classList.add('active');
         }
 
-        // Expandir/contraer tarjeta de regalo - VERSIÓN CORREGIDA
+        // Expandir/contraer tarjeta de regalo
         function toggleExpand(giftId, event) {
             if(event) event.preventDefault();
             const giftCard = document.getElementById(giftId);
@@ -1515,28 +1513,35 @@
             window.open(url, '_blank');
         }
 
-        // Cambiar el collage de fotos
-        function changeCollage() {
+        // Generar collage de fotos
+        function generateCollage() {
             const collage = document.getElementById('collage');
-            const images = [
-                'https://proonc-sudo.github.io/r7.jpeg',
-                'https://proonc-sudo.github.io/r8.jpeg',
-                'https://proonc-sudo.github.io/r9.jpeg',
-                'https://proonc-sudo.github.io/r10.jpeg',
-                'https://proonc-sudo.github.io/r11.jpeg',
-                'https://proonc-sudo.github.io/r1.jpeg'
-            ];
+            collage.innerHTML = '';
             
-            // Mezclar las imágenes
-            for (let i = images.length - 1; i > 0; i--) {
-                const j = Math.floor(Math.random() * (i + 1));
-                [images[i], images[j]] = [images[j], images[i]];
+            // Asumimos que hay 60 imágenes en la carpeta images con nombres secuenciales
+            const totalImages = 60;
+            const imagesToShow = 30; // Mostrar solo un subconjunto para mejor rendimiento
+            
+            // Seleccionar imágenes aleatorias
+            const selectedImages = [];
+            for (let i = 0; i < imagesToShow; i++) {
+                const randomNum = Math.floor(Math.random() * totalImages) + 1;
+                selectedImages.push(`images/image${randomNum}.jpg`);
             }
             
-            // Actualizar las imágenes en el collage
-            const imgElements = collage.querySelectorAll('img');
-            imgElements.forEach((img, index) => {
-                img.src = images[index % images.length];
+            // Crear elementos de imagen con clases aleatorias para diferentes tamaños
+            selectedImages.forEach(imgSrc => {
+                const img = document.createElement('img');
+                img.src = imgSrc;
+                img.className = 'collage-img';
+                img.alt = 'Momentazo';
+                
+                // Asignar clase de tamaño aleatorio
+                const sizeClasses = ['', 'wide', 'tall', 'big'];
+                const randomSize = sizeClasses[Math.floor(Math.random() * sizeClasses.length)];
+                if (randomSize) img.classList.add(randomSize);
+                
+                collage.appendChild(img);
             });
         }
     </script>
