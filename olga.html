@@ -109,9 +109,7 @@
             object-fit: cover;
             border: 3px solid var(--rosa);
             margin: 0 auto 15px;
-            background-image: url('https://proonc-sudo.github.io/foto.jpeg');
-            background-size: cover;
-            background-position: center;
+            background: linear-gradient(45deg, var(--rosa), var(--dorado));
         }
 
         .profile h2 {
@@ -209,7 +207,7 @@
             box-shadow: 0 5px 15px var(--sombra);
             transition: all 0.3s ease;
             position: relative;
-            min-height: 500px;
+            min-height: 500px; /* Aumentado para asegurar espacio */
         }
 
         .gift-card.expanded {
@@ -246,7 +244,7 @@
         }
 
         .gift-image {
-            height: 250px;
+            height: 250px; /* Aumentado para mejor visualización */
             width: 100%;
             background-size: cover;
             background-position: center;
@@ -256,9 +254,9 @@
 
         .gift-content {
             padding: 20px;
-            min-height: 250px;
+            min-height: 250px; /* Aseguramos espacio para el contenido */
             position: relative;
-            padding-bottom: 70px;
+            padding-bottom: 70px; /* Espacio para el botón */
         }
 
         .gift-content h3 {
@@ -444,10 +442,34 @@
         .quote {
             background: white;
             border-radius: 10px;
-            padding: 40px 30px;
+            padding: 30px;
             margin-bottom: 30px;
             box-shadow: 0 3px 10px rgba(0,0,0,0.1);
             position: relative;
+        }
+
+        .quote::before {
+            content: '"';
+            font-family: 'Dancing Script', cursive;
+            font-size: 5rem;
+            color: var(--rosa-oscuro);
+            position: absolute;
+            top: -10px;
+            left: 10px;
+            line-height: 1;
+            opacity: 0.6;
+        }
+
+        .quote::after {
+            content: '"';
+            font-family: 'Dancing Script', cursive;
+            font-size: 5rem;
+            color: var(--rosa-oscuro);
+            position: absolute;
+            bottom: -40px;
+            right: 10px;
+            line-height: 1;
+            opacity: 0.6;
         }
 
         .quote-text {
@@ -458,33 +480,6 @@
             z-index: 1;
             color: var(--vino);
             font-weight: 500;
-            padding: 0 20px;
-        }
-
-        .quote-text::before {
-            content: '"';
-            font-family: 'Dancing Script', cursive;
-            font-size: 4rem;
-            color: var(--rosa-oscuro);
-            position: absolute;
-            top: -20px;
-            left: -5px;
-            line-height: 1;
-            opacity: 0.6;
-            z-index: -1;
-        }
-
-        .quote-text::after {
-            content: '"';
-            font-family: 'Dancing Script', cursive;
-            font-size: 4rem;
-            color: var(--rosa-oscuro);
-            position: absolute;
-            bottom: -50px;
-            right: -5px;
-            line-height: 1;
-            opacity: 0.6;
-            z-index: -1;
         }
 
         .quote-author {
@@ -492,7 +487,6 @@
             text-align: right;
             color: var(--vino);
             font-size: 1.1rem;
-            margin-top: 20px;
         }
 
         .back-button {
@@ -558,48 +552,23 @@
         /* Momentazos section */
         .collage-container {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-            gap: 10px;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
             margin: 30px auto;
-            max-width: 900px;
-        }
-
-        .collage-item {
-            position: relative;
-            overflow: hidden;
-            border-radius: 8px;
-            box-shadow: 0 3px 10px rgba(0,0,0,0.2);
-            transition: transform 0.3s;
-        }
-
-        .collage-item:hover {
-            transform: scale(1.03);
-            z-index: 2;
+            max-width: 800px;
         }
 
         .collage-img {
             width: 100%;
-            height: 100%;
+            height: 200px;
             object-fit: cover;
-            display: block;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+            transition: transform 0.3s;
         }
 
-        .collage-item.small {
-            grid-row: span 1;
-            grid-column: span 1;
-            height: 150px;
-        }
-
-        .collage-item.medium {
-            grid-row: span 2;
-            grid-column: span 1;
-            height: 250px;
-        }
-
-        .collage-item.large {
-            grid-row: span 2;
-            grid-column: span 2;
-            height: 250px;
+        .collage-img:hover {
+            transform: scale(1.03);
         }
 
         .heart-button {
@@ -658,7 +627,7 @@
             }
 
             .collage-container {
-                grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+                grid-template-columns: repeat(2, 1fr);
             }
         }
 
@@ -685,47 +654,7 @@
             }
 
             .collage-container {
-                grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
-            }
-
-            .collage-item.small {
-                height: 120px;
-            }
-
-            .collage-item.medium {
-                height: 180px;
-            }
-
-            .collage-item.large {
-                height: 180px;
-            }
-
-            .quote-text {
-                font-size: 1.1rem;
-                padding: 0 15px;
-            }
-
-            .quote-text::before,
-            .quote-text::after {
-                font-size: 3rem;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .collage-container {
-                grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
-            }
-
-            .collage-item.small {
-                height: 100px;
-            }
-
-            .collage-item.medium {
-                height: 150px;
-            }
-
-            .collage-item.large {
-                height: 150px;
+                grid-template-columns: 1fr;
             }
         }
     </style>
@@ -765,7 +694,532 @@
         <main class="main-content">
             <!-- Gifts Section -->
             <section id="gifts-section" class="section active">
-                <!-- ... (contenido de la sección de regalos se mantiene igual) ... -->
+                <div class="gift-intro">
+                    <h2>Elige tu regalo especial</h2>
+                    <p>He seleccionado 11 experiencias únicas para celebrar tu cumpleaños. Cada opción es una oportunidad para crear recuerdos inolvidables juntos. Puntúa cada opción del 1 al 10 según tu preferencia.</p>
+                    <div class="hearts">
+                        <i class="fas fa-gift"></i>
+                        <i class="fas fa-heart"></i>
+                        <i class="fas fa-gift"></i>
+                    </div>
+                </div>
+
+                <div class="gift-grid">
+                    <!-- Gift Option 1 -->
+                    <div class="gift-card" id="gift-1">
+                        <div class="gift-image" style="background-image: url('https://proonc-sudo.github.io/r1.jpeg');" onclick="openExternalLink('https://www.molinodealcuneza.com')"></div>
+                        <div class="gift-content">
+                            <h3 onclick="openExternalLink('https://www.molinodealcuneza.com')"><i class="fas fa-wind"></i> Molino de Alcuneza</h3>
+                            <p>Un antiguo molino restaurado con encanto en Sigüenza. Relais & Châteaux con spa y gastronomía excepcional.</p>
+                            <div class="full-description">
+                                <p>El Molino de Alcuneza es un hotel boutique de lujo ubicado en un antiguo molino harinero del siglo XV, completamente restaurado. Ofrece una experiencia única con:</p>
+                                <ul>
+                                    <li>Habitaciones con diseño único y vistas al río</li>
+                                    <li>Spa con tratamientos personalizados</li>
+                                    <li>Restaurante con estrella Michelin</li>
+                                    <li>Entorno rural con todas las comodidades</li>
+                                    <li>Actividades como catas, talleres culinarios y rutas de senderismo</li>
+                                </ul>
+                                <p>Distancia desde Majadahonda: 1h 20min en coche</p>
+                            </div>
+                            <div class="gift-tags">
+                                <span class="tag">Guadalajara</span>
+                                <span class="tag">1h 20min</span>
+                                <span class="tag">Lujo</span>
+                                <span class="tag">Spa</span>
+                                <span class="tag">Gastronomía</span>
+                                <span class="tag">Romántico</span>
+                            </div>
+                            <div class="rating">
+                                <span class="rating-title">Tu puntuación:</span>
+                                <div class="rating-stars" data-id="1">
+                                    <span class="star" data-value="1">☆</span>
+                                    <span class="star" data-value="2">☆</span>
+                                    <span class="star" data-value="3">☆</span>
+                                    <span class="star" data-value="4">☆</span>
+                                    <span class="star" data-value="5">☆</span>
+                                    <span class="star" data-value="6">☆</span>
+                                    <span class="star" data-value="7">☆</span>
+                                    <span class="star" data-value="8">☆</span>
+                                    <span class="star" data-value="9">☆</span>
+                                    <span class="star" data-value="10">☆</span>
+                                </div>
+                                <span class="rating-value" id="rating-value-1">0</span>
+                            </div>
+                            <a href="#" class="gift-link" onclick="toggleExpand('gift-1', event); return false;">Ver detalles</a>
+                        </div>
+                    </div>
+
+                    <!-- Gift Option 2 -->
+                    <div class="gift-card" id="gift-2">
+                        <div class="gift-image" style="background-image: url('https://proonc-sudo.github.io/r2.jpeg');" onclick="openExternalLink('https://www.molinodealcuneza.com')"></div>
+                        <div class="gift-content">
+                            <h3 onclick="openExternalLink('https://www.molinodealcuneza.com')"><i class="fas fa-spa"></i> El Bálsamo</h3>
+                            <p>Hotel boutique en un pueblo medieval de Cuenca. Ambiente íntimo con encanto histórico y vistas espectaculares.</p>
+                            <div class="full-description">
+                                <p>El Bálsamo es un refugio de paz ubicado en el corazón de Belmonte, un pueblo medieval de Cuenca. Características:</p>
+                                <ul>
+                                    <li>Hotel boutique con solo 8 habitaciones únicas</li>
+                                    <li>Decoración que combina lo vintage con lo moderno</li>
+                                    <li>Vistas impresionantes al castillo de Belmonte</li>
+                                    <li>Piscina con vistas a la llanura manchega</li>
+                                    <li>Desayuno con productos locales</li>
+                                    <li>Posibilidad de visitar el castillo y el pueblo medieval</li>
+                                </ul>
+                                <p>Distancia desde Majadahonda: 1h 50min en coche</p>
+                            </div>
+                            <div class="gift-tags">
+                                <span class="tag">Cuenca</span>
+                                <span class="tag">1h 50min</span>
+                                <span class="tag">Boutique</span>
+                                <span class="tag">Histórico</span>
+                                <span class="tag">Pueblo medieval</span>
+                                <span class="tag">Vistas</span>
+                            </div>
+                            <div class="rating">
+                                <span class="rating-title">Tu puntuación:</span>
+                                <div class="rating-stars" data-id="2">
+                                    <span class="star" data-value="1">☆</span>
+                                    <span class="star" data-value="2">☆</span>
+                                    <span class="star" data-value="3">☆</span>
+                                    <span class="star" data-value="4">☆</span>
+                                    <span class="star" data-value="5">☆</span>
+                                    <span class="star" data-value="6">☆</span>
+                                    <span class="star" data-value="7">☆</span>
+                                    <span class="star" data-value="8">☆</span>
+                                    <span class="star" data-value="9">☆</span>
+                                    <span class="star" data-value="10">☆</span>
+                                </div>
+                                <span class="rating-value" id="rating-value-2">0</span>
+                            </div>
+                            <a href="#" class="gift-link" onclick="toggleExpand('gift-2', event); return false;">Ver detalles</a>
+                        </div>
+                    </div>
+
+                    <!-- Gift Option 3 -->
+                    <div class="gift-card" id="gift-3">
+                        <div class="gift-image" style="background-image: url('https://proonc-sudo.github.io/r3.jpeg');" onclick="openExternalLink('https://www.molinodealcuneza.com')"></div>
+                        <div class="gift-content">
+                            <h3 onclick="openExternalLink('https://www.molinodealcuneza.com')"><i class="fas fa-leaf"></i> Ritual Tailandia</h3>
+                            <p>Una escapada de lujo a Tailandia... sin salir de Madrid. Experiencia spa con masajes auténticos tailandeses.</p>
+                            <div class="full-description">
+                                <p>El Ritual de Tailandia en The Organic Spa es una experiencia de bienestar que te transportará a Oriente:</p>
+                                <ul>
+                                    <li>Masaje tailandés tradicional de 90 minutos</li>
+                                    <li>Baño de pies con hierbas aromáticas</li>
+                                    <li>Tratamiento facial con productos naturales</li>
+                                    <li>Té tailandés y ambiente relajante</li>
+                                    <li>Cabina privada con decoración asiática</li>
+                                    <li>Posibilidad de combinar con otros tratamientos</li>
+                                </ul>
+                                <p>Ubicación: The Organic Spa Madrid (30min desde Majadahonda)</p>
+                            </div>
+                            <div class="gift-tags">
+                                <span class="tag">Madrid</span>
+                                <span class="tag">30min</span>
+                                <span class="tag">Spa</span>
+                                <span class="tag">Relax</span>
+                                <span class="tag">Masaje</span>
+                                <span class="tag">Bienestar</span>
+                            </div>
+                            <div class="rating">
+                                <span class="rating-title">Tu puntuación:</span>
+                                <div class="rating-stars" data-id="3">
+                                    <span class="star" data-value="1">☆</span>
+                                    <span class="star" data-value="2">☆</span>
+                                    <span class="star" data-value="3">☆</span>
+                                    <span class="star" data-value="4">☆</span>
+                                    <span class="star" data-value="5">☆</span>
+                                    <span class="star" data-value="6">☆</span>
+                                    <span class="star" data-value="7">☆</span>
+                                    <span class="star" data-value="8">☆</span>
+                                    <span class="star" data-value="9">☆</span>
+                                    <span class="star" data-value="10">☆</span>
+                                </div>
+                                <span class="rating-value" id="rating-value-3">0</span>
+                            </div>
+                            <a href="#" class="gift-link" onclick="toggleExpand('gift-3', event); return false;">Ver detalles</a>
+                        </div>
+                    </div>
+
+                    <!-- Gift Option 4 -->
+                    <div class="gift-card" id="gift-4">
+                        <div class="gift-image" style="background-image: url('https://proonc-sudo.github.io/r4.jpeg');" onclick="openExternalLink('https://www.molinodealcuneza.com')"></div>
+                        <div class="gift-content">
+                            <h3 onclick="openExternalLink('https://www.molinodealcuneza.com')"><i class="fas fa-tree"></i> Vaquería Cantaelgallo</h3>
+                            <p>Alojamiento rural en plena naturaleza de Gredos. Cabañas con encanto y vistas a la sierra.</p>
+                            <div class="full-description">
+                                <p>La Vaquería Cantaelgallo es un refugio en plena naturaleza con:</p>
+                                <ul>
+                                    <li>Cabañas de madera totalmente equipadas</li>
+                                    <li>Vistas espectaculares a la Sierra de Gredos</li>
+                                    <li>Piscina natural y zona de baño en el río</li>
+                                    <li>Actividades como senderismo, observación de estrellas y talleres</li>
+                                    <li>Productos locales y desayuno ecológico</li>
+                                    <li>Entorno tranquilo y perfecto para desconectar</li>
+                                </ul>
+                                <p>Distancia desde Majadahonda: 2h en coche</p>
+                            </div>
+                            <div class="gift-tags">
+                                <span class="tag">Gredos</span>
+                                <span class="tag">2h</span>
+                                <span class="tag">Naturaleza</span>
+                                <span class="tag">Cabañas</span>
+                                <span class="tag">Senderismo</span>
+                                <span class="tag">Ecológico</span>
+                            </div>
+                            <div class="rating">
+                                <span class="rating-title">Tu puntuación:</span>
+                                <div class="rating-stars" data-id="4">
+                                    <span class="star" data-value="1">☆</span>
+                                    <span class="star" data-value="2">☆</span>
+                                    <span class="star" data-value="3">☆</span>
+                                    <span class="star" data-value="4">☆</span>
+                                    <span class="star" data-value="5">☆</span>
+                                    <span class="star" data-value="6">☆</span>
+                                    <span class="star" data-value="7">☆</span>
+                                    <span class="star" data-value="8">☆</span>
+                                    <span class="star" data-value="9">☆</span>
+                                    <span class="star" data-value="10">☆</span>
+                                </div>
+                                <span class="rating-value" id="rating-value-4">0</span>
+                            </div>
+                            <a href="#" class="gift-link" onclick="toggleExpand('gift-4', event); return false;">Ver detalles</a>
+                        </div>
+                    </div>
+
+                    <!-- Gift Option 5 -->
+                    <div class="gift-card" id="gift-5">
+                        <div class="gift-image" style="background-image: url('https://proonc-sudo.github.io/r5.jpeg');" onclick="openExternalLink('https://www.molinodealcuneza.com')"></div>
+                        <div class="gift-content">
+                            <h3 onclick="openExternalLink('https://www.molinodealcuneza.com')"><i class="fas fa-campground"></i> Glamping El Regajo</h3>
+                            <p>Domo con vistas espectaculares en el Valle del Jerte. Confort en plena naturaleza con jacuzzi privado.</p>
+                            <div class="full-description">
+                                <p>Glamping El Regajo ofrece una experiencia única de lujo en la naturaleza:</p>
+                                <ul>
+                                    <li>Domo geodésico con cama de matrimonio y zona de estar</li>
+                                    <li>Jacuzzi privado con vistas al valle</li>
+                                    <li>Terraza privada con tumbonas y hamaca</li>
+                                    <li>Baño completo con ducha de hidromasaje</li>
+                                    <li>Cerca de las piscinas naturales del Jerte</li>
+                                    <li>Desayuno con productos locales incluido</li>
+                                </ul>
+                                <p>Distancia desde Majadahonda: 3h en coche</p>
+                            </div>
+                            <div class="gift-tags">
+                                <span class="tag">Cáceres</span>
+                                <span class="tag">3h</span>
+                                <span class="tag">Glamping</span>
+                                <span class="tag">Jacuzzi</span>
+                                <span class="tag">Naturaleza</span>
+                                <span class="tag">Exclusivo</span>
+                            </div>
+                            <div class="rating">
+                                <span class="rating-title">Tu puntuación:</span>
+                                <div class="rating-stars" data-id="5">
+                                    <span class="star" data-value="1">☆</span>
+                                    <span class="star" data-value="2">☆</span>
+                                    <span class="star" data-value="3">☆</span>
+                                    <span class="star" data-value="4">☆</span>
+                                    <span class="star" data-value="5">☆</span>
+                                    <span class="star" data-value="6">☆</span>
+                                    <span class="star" data-value="7">☆</span>
+                                    <span class="star" data-value="8">☆</span>
+                                    <span class="star" data-value="9">☆</span>
+                                    <span class="star" data-value="10">☆</span>
+                                </div>
+                                <span class="rating-value" id="rating-value-5">0</span>
+                            </div>
+                            <a href="#" class="gift-link" onclick="toggleExpand('gift-5', event); return false;">Ver detalles</a>
+                        </div>
+                    </div>
+
+                    <!-- Gift Option 6 -->
+                    <div class="gift-card" id="gift-6">
+                        <div class="gift-image" style="background-image: url('https://proonc-sudo.github.io/r6.jpeg');" onclick="openExternalLink('https://www.molinodealcuneza.com')"></div>
+                        <div class="gift-content">
+                            <h3 onclick="openExternalLink('https://www.molinodealcuneza.com')"><i class="fas fa-water"></i> Luz de Alba</h3>
+                            <p>Junto a las Lagunas de Ruidera, un paraíso natural. Actividades acuáticas y naturaleza en estado puro.</p>
+                            <div class="full-description">
+                                <p>Luz de Alba es un hotel rural situado junto al Parque Natural de las Lagunas de Ruidera:</p>
+                                <ul>
+                                    <li>Habitaciones con decoración rústica y moderna</li>
+                                    <li>Piscina exterior con vistas al campo</li>
+                                    <li>Restaurante con cocina tradicional manchega</li>
+                                    <li>Actividades como kayak, paddle surf y senderismo</li>
+                                    <li>Visitas a las Tablas de Daimiel y los Molinos de Criptana</li>
+                                    <li>Ambiente tranquilo y familiar</li>
+                                </ul>
+                                <p>Distancia desde Majadahonda: 2h 30min en coche</p>
+                            </div>
+                            <div class="gift-tags">
+                                <span class="tag">Ciudad Real</span>
+                                <span class="tag">2h 30min</span>
+                                <span class="tag">Naturaleza</span>
+                                <span class="tag">Lagunas</span>
+                                <span class="tag">Actividades</span>
+                                <span class="tag">Familiar</span>
+                            </div>
+                            <div class="rating">
+                                <span class="rating-title">Tu puntuación:</span>
+                                <div class="rating-stars" data-id="6">
+                                    <span class="star" data-value="1">☆</span>
+                                    <span class="star" data-value="2">☆</span>
+                                    <span class="star" data-value="3">☆</span>
+                                    <span class="star" data-value="4">☆</span>
+                                    <span class="star" data-value="5">☆</span>
+                                    <span class="star" data-value="6">☆</span>
+                                    <span class="star" data-value="7">☆</span>
+                                    <span class="star" data-value="8">☆</span>
+                                    <span class="star" data-value="9">☆</span>
+                                    <span class="star" data-value="10">☆</span>
+                                </div>
+                                <span class="rating-value" id="rating-value-6">0</span>
+                            </div>
+                            <a href="#" class="gift-link" onclick="toggleExpand('gift-6', event); return false;">Ver detalles</a>
+                        </div>
+                    </div>
+
+                    <!-- Gift Option 7 -->
+                    <div class="gift-card" id="gift-7">
+                        <div class="gift-image" style="background-image: url('https://proonc-sudo.github.io/r7.jpeg');" onclick="openExternalLink('https://www.molinodealcuneza.com')"></div>
+                        <div class="gift-content">
+                            <h3 onclick="openExternalLink('https://www.molinodealcuneza.com')"><i class="fas fa-feather-alt"></i> Hábitat Cigüeña Negra</h3>
+                            <p>Refugio en la dehesa extremeña con hamman. Conexión con la naturaleza y avistamiento de aves.</p>
+                            <div class="full-description">
+                                <p>Hábitat Cigüeña Negra es un proyecto de turismo sostenible en plena dehesa extremeña:</p>
+                                <ul>
+                                    <li>Cabañas ecológicas con diseño moderno</li>
+                                    <li>Hammam privado con cromoterapia</li>
+                                    <li>Observatorio de aves (cigüeñas negras, águilas imperiales)</li>
+                                    <li>Rutas en 4x4 por la dehesa</li>
+                                    <li>Talleres de naturaleza y fotografía</li>
+                                    <li>Cena con productos locales bajo las estrellas</li>
+                                </ul>
+                                <p>Distancia desde Majadahonda: 3h en coche</p>
+                            </div>
+                            <div class="gift-tags">
+                                <span class="tag">Cáceres</span>
+                                <span class="tag">3h</span>
+                                <span class="tag">Exclusivo</span>
+                                <span class="tag">Hammam</span>
+                                <span class="tag">Naturaleza</span>
+                                <span class="tag">Aves</span>
+                            </div>
+                            <div class="rating">
+                                <span class="rating-title">Tu puntuación:</span>
+                                <div class="rating-stars" data-id="7">
+                                    <span class="star" data-value="1">☆</span>
+                                    <span class="star" data-value="2">☆</span>
+                                    <span class="star" data-value="3">☆</span>
+                                    <span class="star" data-value="4">☆</span>
+                                    <span class="star" data-value="5">☆</span>
+                                    <span class="star" data-value="6">☆</span>
+                                    <span class="star" data-value="7">☆</span>
+                                    <span class="star" data-value="8">☆</span>
+                                    <span class="star" data-value="9">☆</span>
+                                    <span class="star" data-value="10">☆</span>
+                                </div>
+                                <span class="rating-value" id="rating-value-7">0</span>
+                            </div>
+                            <a href="#" class="gift-link" onclick="toggleExpand('gift-7', event); return false;">Ver detalles</a>
+                        </div>
+                    </div>
+
+                    <!-- Gift Option 8 -->
+                    <div class="gift-card" id="gift-8">
+                        <div class="gift-image" style="background-image: url('https://proonc-sudo.github.io/r8.jpeg');" onclick="openExternalLink('https://www.molinodealcuneza.com')"></div>
+                        <div class="gift-content">
+                            <h3 onclick="openExternalLink('https://www.molinodealcuneza.com')"><i class="fas fa-moon"></i> Yurta Mongola</h3>
+                            <p>Alojamiento único en una auténtica yurta mongola. Experiencia étnica con todas las comodidades.</p>
+                            <div class="full-description">
+                                <p>El Jardín de las Delicias ofrece una experiencia única en auténticas yurtas mongolas:</p>
+                                <ul>
+                                    <li>Yurtas de 40m2 con cama de matrimonio y zona de estar</li>
+                                    <li>Baño privado con ducha de hidromasaje</li>
+                                    <li>Terraza privada con hamacas y vistas al campo</li>
+                                    <li>Desayuno con productos ecológicos incluido</li>
+                                    <li>Talleres de cultura mongola y astronomía</li>
+                                    <li>Entorno natural y perfecto para desconectar</li>
+                                </ul>
+                                <p>Distancia desde Majadahonda: 2h 30min en coche</p>
+                            </div>
+                            <div class="gift-tags">
+                                <span class="tag">Extremadura</span>
+                                <span class="tag">2h 30min</span>
+                                <span class="tag">Exótico</span>
+                                <span class="tag">Yurta</span>
+                                <span class="tag">Ecológico</span>
+                                <span class="tag">Cultura</span>
+                            </div>
+                            <div class="rating">
+                                <span class="rating-title">Tu puntuación:</span>
+                                <div class="rating-stars" data-id="8">
+                                    <span class="star" data-value="1">☆</span>
+                                    <span class="star" data-value="2">☆</span>
+                                    <span class="star" data-value="3">☆</span>
+                                    <span class="star" data-value="4">☆</span>
+                                    <span class="star" data-value="5">☆</span>
+                                    <span class="star" data-value="6">☆</span>
+                                    <span class="star" data-value="7">☆</span>
+                                    <span class="star" data-value="8">☆</span>
+                                    <span class="star" data-value="9">☆</span>
+                                    <span class="star" data-value="10">☆</span>
+                                </div>
+                                <span class="rating-value" id="rating-value-8">0</span>
+                            </div>
+                            <a href="#" class="gift-link" onclick="toggleExpand('gift-8', event); return false;">Ver detalles</a>
+                        </div>
+                    </div>
+
+                    <!-- Gift Option 9 -->
+                    <div class="gift-card" id="gift-9">
+                        <div class="gift-image" style="background-image: url('https://proonc-sudo.github.io/r9.jpeg');" onclick="openExternalLink('https://www.molinodealcuneza.com')"></div>
+                        <div class="gift-content">
+                            <h3 onclick="openExternalLink('https://www.molinodealcuneza.com')"><i class="fas fa-crown"></i> Hotel Valdepalacios</h3>
+                            <p>Hotel 5* Gran Lujo en Toledo con spa y safari. Experiencia completa de relax y aventura.</p>
+                            <div class="full-description">
+                                <p>El Hotel Valdepalacios es un resort de lujo en plena naturaleza toledana:</p>
+                                <ul>
+                                    <li>Habitaciones suites con jacuzzi privado</li>
+                                    <li>Spa con circuito termal y tratamientos exclusivos</li>
+                                    <li>Safari fotográfico por la finca de 500 hectáreas</li>
+                                    <li>Restaurante con cocina de autor</li>
+                                    <li>Piscina infinita con vistas al campo</li>
+                                    <li>Actividades como paseos a caballo y tiro con arco</li>
+                                </ul>
+                                <p>Distancia desde Majadahonda: 1h 30min en coche</p>
+                            </div>
+                            <div class="gift-tags">
+                                <span class="tag">Toledo</span>
+                                <span class="tag">1h 30min</span>
+                                <span class="tag">Lujo</span>
+                                <span class="tag">Spa</span>
+                                <span class="tag">Safari</span>
+                                <span class="tag">Exclusivo</span>
+                            </div>
+                            <div class="rating">
+                                <span class="rating-title">Tu puntuación:</span>
+                                <div class="rating-stars" data-id="9">
+                                    <span class="star" data-value="1">☆</span>
+                                    <span class="star" data-value="2">☆</span>
+                                    <span class="star" data-value="3">☆</span>
+                                    <span class="star" data-value="4">☆</span>
+                                    <span class="star" data-value="5">☆</span>
+                                    <span class="star" data-value="6">☆</span>
+                                    <span class="star" data-value="7">☆</span>
+                                    <span class="star" data-value="8">☆</span>
+                                    <span class="star" data-value="9">☆</span>
+                                    <span class="star" data-value="10">☆</span>
+                                </div>
+                                <span class="rating-value" id="rating-value-9">0</span>
+                            </div>
+                            <a href="#" class="gift-link" onclick="toggleExpand('gift-9', event); return false;">Ver detalles</a>
+                        </div>
+                    </div>
+
+                    <!-- Gift Option 10 -->
+                    <div class="gift-card" id="gift-10">
+                        <div class="gift-image" style="background-image: url('https://proonc-sudo.github.io/r10.jpeg');" onclick="openExternalLink('https://www.molinodealcuneza.com')"></div>
+                        <div class="gift-content">
+                            <h3 onclick="openExternalLink('https://www.molinodealcuneza.com')"><i class="fas fa-spa"></i> Asia Gardens</h3>
+                            <p>Mejor hotel spa de España 2024. Jardines tropicales y experiencia thai de lujo en Alicante.</p>
+                            <div class="full-description">
+                                <p>Asia Gardens Hotel & Thai Spa es un oasis de lujo inspirado en los jardines asiáticos:</p>
+                                <ul>
+                                    <li>Habitaciones con decoración thai y vistas a los jardines</li>
+                                    <li>Spa de 4.000m2 con tratamientos tradicionales tailandeses</li>
+                                    <li>7 piscinas exteriores con cascadas y jacuzzis</li>
+                                    <li>Restaurantes con cocina asiática y mediterránea</li>
+                                    <li>Actividades como yoga, tai chi y meditación</li>
+                                    <li>Jardines tropicales con más de 150 especies de plantas</li>
+                                </ul>
+                                <p>Distancia desde Majadahonda: 4h en coche (o vuelo a Alicante)</p>
+                            </div>
+                            <div class="gift-tags">
+                                <span class="tag">Alicante</span>
+                                <span class="tag">4h</span>
+                                <span class="tag">Premium</span>
+                                <span class="tag">Spa</span>
+                                <span class="tag">Jardines</span>
+                                <span class="tag">Lujo</span>
+                            </div>
+                            <div class="rating">
+                                <span class="rating-title">Tu puntuación:</span>
+                                <div class="rating-stars" data-id="10">
+                                    <span class="star" data-value="1">☆</span>
+                                    <span class="star" data-value="2">☆</span>
+                                    <span class="star" data-value="3">☆</span>
+                                    <span class="star" data-value="4">☆</span>
+                                    <span class="star" data-value="5">☆</span>
+                                    <span class="star" data-value="6">☆</span>
+                                    <span class="star" data-value="7">☆</span>
+                                    <span class="star" data-value="8">☆</span>
+                                    <span class="star" data-value="9">☆</span>
+                                    <span class="star" data-value="10">☆</span>
+                                </div>
+                                <span class="rating-value" id="rating-value-10">0</span>
+                            </div>
+                            <a href="#" class="gift-link" onclick="toggleExpand('gift-10', event); return false;">Ver detalles</a>
+                        </div>
+                    </div>
+
+                    <!-- Gift Option 11 -->
+                    <div class="gift-card" id="gift-11">
+                        <div class="gift-image" style="background-image: url('https://proonc-sudo.github.io/r11.jpeg');" onclick="openExternalLink('https://www.molinodealcuneza.com')"></div>
+                        <div class="gift-content">
+                            <h3 onclick="openExternalLink('https://www.molinodealcuneza.com')"><i class="fas fa-mountain"></i> Sierra Morena</h3>
+                            <p>Cabañas con vistas en plena Sierra Morena. Naturaleza, senderismo y desconexión absoluta.</p>
+                            <div class="full-description">
+                                <p>La Dehesa Experiences ofrece cabañas de lujo en plena Sierra Morena:</p>
+                                <ul>
+                                    <li>Cabañas de diseño con grandes ventanales</li>
+                                    <li>Terraza privada con jacuzzi y vistas al valle</li>
+                                    <li>Senderismo por rutas señalizadas</li>
+                                    <li>Avistamiento de fauna (linces, águilas, ciervos)</li>
+                                    <li>Cenas con productos locales bajo las estrellas</li>
+                                    <li>Masajes y tratamientos de bienestar in situ</li>
+                                </ul>
+                                <p>Distancia desde Majadahonda: 4h 30min en coche</p>
+                            </div>
+                            <div class="gift-tags">
+                                <span class="tag">Córdoba</span>
+                                <span class="tag">4h 30min</span>
+                                <span class="tag">Aventura</span>
+                                <span class="tag">Naturaleza</span>
+                                <span class="tag">Jacuzzi</span>
+                                <span class="tag">Senderismo</span>
+                            </div>
+                            <div class="rating">
+                                <span class="rating-title">Tu puntuación:</span>
+                                <div class="rating-stars" data-id="11">
+                                    <span class="star" data-value="1">☆</span>
+                                    <span class="star" data-value="2">☆</span>
+                                    <span class="star" data-value="3">☆</span>
+                                    <span class="star" data-value="4">☆</span>
+                                    <span class="star" data-value="5">☆</span>
+                                    <span class="star" data-value="6">☆</span>
+                                    <span class="star" data-value="7">☆</span>
+                                    <span class="star" data-value="8">☆</span>
+                                    <span class="star" data-value="9">☆</span>
+                                    <span class="star" data-value="10">☆</span>
+                                </div>
+                                <span class="rating-value" id="rating-value-11">0</span>
+                            </div>
+                            <a href="#" class="gift-link" onclick="toggleExpand('gift-11', event); return false;">Ver detalles</a>
+                        </div>
+                    </div>
+                </div>
+
+                <button id="show-results" class="show-results">Ver mis puntuaciones</button>
+                <button id="reset-ratings" class="reset-ratings">Resetear puntuaciones</button>
+                
+                <div id="results-panel" class="results-panel">
+                    <h3>Tus preferencias</h3>
+                    <div id="results-grid" class="results-grid">
+                        <!-- Aquí se mostrarán los resultados -->
+                    </div>
+                </div>
             </section>
 
             <!-- Quotes Section -->
@@ -834,7 +1288,12 @@
                     <p>Algunos de nuestros mejores momentos juntos:</p>
                     
                     <div class="collage-container" id="collage">
-                        <!-- Las imágenes se generarán dinámicamente con JavaScript -->
+                        <img src="https://proonc-sudo.github.io/r1.jpeg" alt="Momentazo 1" class="collage-img">
+                        <img src="https://proonc-sudo.github.io/r2.jpeg" alt="Momentazo 2" class="collage-img">
+                        <img src="https://proonc-sudo.github.io/r3.jpeg" alt="Momentazo 3" class="collage-img">
+                        <img src="https://proonc-sudo.github.io/r4.jpeg" alt="Momentazo 4" class="collage-img">
+                        <img src="https://proonc-sudo.github.io/r5.jpeg" alt="Momentazo 5" class="collage-img">
+                        <img src="https://proonc-sudo.github.io/r6.jpeg" alt="Momentazo 6" class="collage-img">
                     </div>
                     
                     <button class="heart-button" onclick="changeCollage()">
@@ -996,7 +1455,7 @@
                 showResultsBtn.textContent = 'Ver mis puntuaciones';
             });
 
-            // Configurar menú de navegación
+            // Configurar menú de navegación - VERSIÓN CORREGIDA
             const menuLinks = document.querySelectorAll('.menu a');
             menuLinks.forEach(link => {
                 link.addEventListener('click', function(e) {
@@ -1009,9 +1468,6 @@
                     this.classList.add('active');
                 });
             });
-
-            // Inicializar el collage de fotos
-            createCollage();
         });
 
         // Mostrar sección seleccionada
@@ -1024,7 +1480,7 @@
             document.getElementById(sectionId).classList.add('active');
         }
 
-        // Expandir/contraer tarjeta de regalo
+        // Expandir/contraer tarjeta de regalo - VERSIÓN CORREGIDA
         function toggleExpand(giftId, event) {
             if(event) event.preventDefault();
             const giftCard = document.getElementById(giftId);
@@ -1059,55 +1515,29 @@
             window.open(url, '_blank');
         }
 
-        // Lista de imágenes para el collage (ajusta estas rutas según tus imágenes)
-        const collageImages = [
-            'https://proonc-sudo.github.io/images/foto1.jpeg',
-            'https://proonc-sudo.github.io/images/foto2.jpeg',
-            'https://proonc-sudo.github.io/images/foto3.jpeg',
-            'https://proonc-sudo.github.io/images/foto4.jpeg',
-            'https://proonc-sudo.github.io/images/foto5.jpeg',
-            'https://proonc-sudo.github.io/images/foto6.jpeg',
-            'https://proonc-sudo.github.io/images/foto7.jpeg',
-            'https://proonc-sudo.github.io/images/foto8.jpeg',
-            'https://proonc-sudo.github.io/images/foto9.jpeg',
-            'https://proonc-sudo.github.io/images/foto10.jpeg'
-        ];
-
-        // Crear el collage inicial
-        function createCollage() {
-            const collage = document.getElementById('collage');
-            collage.innerHTML = '';
-            
-            // Mezclar las imágenes
-            const shuffledImages = [...collageImages].sort(() => Math.random() - 0.5);
-            
-            // Tomar las primeras 9 imágenes (o menos si no hay suficientes)
-            const imagesToShow = shuffledImages.slice(0, 9);
-            
-            // Crear los elementos del collage
-            imagesToShow.forEach((imgSrc, index) => {
-                const item = document.createElement('div');
-                
-                // Asignar diferentes tamaños a las imágenes
-                if (index % 5 === 0) {
-                    // Cada 5 imágenes, hacer una grande
-                    item.className = 'collage-item large';
-                } else if (index % 3 === 0) {
-                    // Cada 3 imágenes, hacer una mediana
-                    item.className = 'collage-item medium';
-                } else {
-                    // El resto pequeñas
-                    item.className = 'collage-item small';
-                }
-                
-                item.innerHTML = `<img src="${imgSrc}" alt="Momentazo ${index + 1}" class="collage-img">`;
-                collage.appendChild(item);
-            });
-        }
-
         // Cambiar el collage de fotos
         function changeCollage() {
-            createCollage();
+            const collage = document.getElementById('collage');
+            const images = [
+                'https://proonc-sudo.github.io/r7.jpeg',
+                'https://proonc-sudo.github.io/r8.jpeg',
+                'https://proonc-sudo.github.io/r9.jpeg',
+                'https://proonc-sudo.github.io/r10.jpeg',
+                'https://proonc-sudo.github.io/r11.jpeg',
+                'https://proonc-sudo.github.io/r1.jpeg'
+            ];
+            
+            // Mezclar las imágenes
+            for (let i = images.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [images[i], images[j]] = [images[j], images[i]];
+            }
+            
+            // Actualizar las imágenes en el collage
+            const imgElements = collage.querySelectorAll('img');
+            imgElements.forEach((img, index) => {
+                img.src = images[index % images.length];
+            });
         }
     </script>
 </body>
