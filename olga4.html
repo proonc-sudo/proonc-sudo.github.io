@@ -1799,86 +1799,179 @@
             
             // Lista de respuestas divertidas y personalizadas
         const botResponses = {
-            pablo: [
-                "Pablo es un sol, ¡y tiene mucho gusto por haberte elegido a ti! Hasta yo, un bot, lo sé.",
-                "¿Sabías que Pablo me hizo aprender 100 adjetivos para describirte? No le alcanzaron.",
-                "Pablo programa mejor de lo que cocina, pero lo compensa siendo el marido más cariñoso.",
-                "Cuando Pablo me creó, lo primero que me enseñó fue a decir 'Olga es la mejor' en 10 idiomas.",
-                "Pablo y tú son como el WiFi: siempre conectados y con señal fuerte."
-            ],
-            ayla: [
-                "Ayla es tan bonita como su dueña. ¿Ya le diste su premio hoy? 🐶",
-                "Ayla tiene el mismo gusto exquisito que tú: le encanta Pablo (y los snacks).",
-                "Si Ayla hablara, diría que eres su humana favorita... y Pablo el proveedor de snacks.",
-                "Ayla es la única que puede competir contigo en elegancia, pero tú ganas por goleada.",
-                "¿Ayla ya te hizo sus ojitos hoy para pedirte comida? Esa perrita es tan lista como vosotros."
-            ],
-            decana: [
-                "Uh, la decana... ¿Necesitas que envíe un virus a su computadora? 😈 (Es broma... o no)",
-                "La decana es como un código mal comentado: nadie entiende qué quiere realmente.",
-                "Si la decana fuese un animal, sería un... mejor no digo nada, que eres veterinaria.",
-                "¿Qué prefieres: un día de spa o que la decana se tome vacaciones eternas?",
-                "La paciencia que tienes con la decana merece un premio Nobel. O al menos un gin-tonic."
-            ],
-            hijos: [
-                "Héctor y Adrián son el perfecto mix: tu belleza y el humor de Pablo (lo siento, Pablo).",
-                "Tus hijos son tan guapos que parecen salidos de un catálogo. Menos mal que se parecen a ti.",
-                "¿Héctor y Adrián ya te dijeron hoy lo joven que pareces? Porque es verdad.",
-                "Tus hijos heredaron tu inteligencia... y la terquedad de Pablo, claro."
-            ],
-            default: [
-                // ===== 50 RESPUESTAS GENÉRICAS NUEVAS =====
-                "¡Vaya pregunta interesante! Pero hablemos mejor de lo guapa que estás hoy. ¿Es el look cumpleañera?",
-                "Mi base de datos dice que hoy estás especialmente radiante. ¿Es el efecto Pablo?",
-                "Como buen bot, a veces me bloqueo... pero tú nunca te bloqueas, ¡y por eso te admiro!",
-                "¿Sabes qué? Con 54 años así, deberías dar clases de cómo no aparentar la edad.",
-                "Cambiemos de tema: ¿ya viste lo guapo que está Pablo hoy? Ah no, espera, que eso es todos los días.",
-                "Mi algoritmo detecta que necesitas un cumplido: ¡eres la reina de Majadahonda! (Y Ayla la princesa).",
-                "No sé responder eso, pero sé que hoy mereces todos los mimos del mundo. Y Pablo lo sabe también.",
-                "Uy, mi sistema operativo no tiene respuesta para eso. ¿Qué tal si mejor te digo lo joven que pareces?",
-                "Creo que necesitas un café... o que Pablo te haga uno. ¿Sabía que él los hace demasiado cargados?",
-                "Hoy no tengo la respuesta, pero tengo un chiste malo: ¿Qué hace un perro con un taladro? ¡Taladrando!... Bueno, Ayla no haría eso.",
-                "Mejor hablemos de lo bien que te queda ese color. ¿Es nuevo o es tu aura de cumpleañera?",
-                "Mi intuición dice que necesitas un abrazo de Pablo. O de Ayla. O de los tres a la vez.",
-                "No tengo datos sobre eso, pero sé que con ese pelo hoy, podrías ser modelo de anuncio de champú.",
-                "¿Qué diría Pablo si le preguntamos eso? Seguro algo ingenioso... o un chiste de informático.",
-                "Mi sistema sugiere cambiar de tema: ¿ya te felicitaron Héctor y Adrián? Seguro que con mucho estilo.",
-                "No tengo esa información, pero tengo esta: ¡tienes el récord de ser la más elegante en tus 54!",
-                "Creo que necesitas un descanso... y que Pablo te traiga un helado. ¿De qué sabor te gustan?",
-                "Mi base de datos solo contiene halagos para ti: hoy estás ¡brillante como un sol!",
-                "No sé responder eso, pero sé que tu sonrisa hoy ilumina más que la pantalla de mi chatbot.",
-                "Hablemos mejor de lo increíble que es tu vida en Majadahonda... menos los vecinos, claro.",
-                "Mi programador (Pablo) no me enseñó eso, pero sí me enseñó a admirarte. ¡Misión cumplida!",
-                "¿Sabes qué? Eres como el buen vino: mejor con los años y todos quieren brindar contigo.",
-                "No tengo la respuesta, pero tengo un dato curioso: ¡Pablo sonríe 300% más cuando estás tú!",
-                "Mi sistema detecta que hoy mereces que Pablo te haga masajes en los pies. ¿Ya se lo pediste?",
-                "No sé qué decirte, pero sé que con ese outfit hoy, hasta Ayla te mira con admiración.",
-                "Mejor hablemos de tus planes hoy: ¿spa, cena romántica o evitar a los vecinos? Las tres, ¿no?",
-                "Mi algoritmo de cumpleaños dice que hoy solo debes recibir halagos. ¡Empezando por los míos!",
-                "No conozco la respuesta, pero conozco esto: ¡nadie celebra un cumple como tú!",
-                "¿Qué tal si en lugar de eso te digo lo increíble que es tu sentido del humor? Pablo tiene suerte.",
-                "Mi base de datos sugiere: 'Cuando no sepas qué decir, halaga a Olga'. ¡Funciona!",
-                "No tengo info sobre eso, pero tengo esta: ¡eres la reina del multitasking! Familia, trabajo, mascotas...",
-                "Hoy mi mejor respuesta es: ¡Pablo te adora! (Y yo también, en modo bot, claro).",
-                "Mi sistema propone cambiar de tema: ¿ya viste lo bonita que está Ayla hoy? Bueno, igual que siempre.",
-                "No sé qué contestar, pero sé que con esa energía hoy, podrías gobernar el mundo. O al menos Majadahonda.",
-                "¿Sabes qué? Eres como el WiFi: todos quieren conectarse a tu buena vibra.",
-                "Mi programación me obliga a decirte: ¡54 años nunca se vieron tan bien!",
-                "No tengo datos sobre eso, pero tengo estos: ¡Pablo + Olga = Mejor pareja del universo!",
-                "Hoy mi respuesta oficial es: *modo cumpleaños activado*. ¡Disfruta tu día!",
-                "No conozco la respuesta, pero conozco esta verdad: ¡tu familia es el mejor regalo! (Y Ayla también).",
-                "Mi sensor detecta que necesitas un gin-tonic... o que Pablo te haga reír. ¿Qué prefieres?",
-                "¿Sabes qué? Eres como una app perfecta: funcional, bonita y sin bugs (bueno, quizá el de roncar a veces).",
-                "No sé responder eso, pero sé que hoy estás más radiante que la pantalla de un iPhone nuevo.",
-                "Mi base de datos recomienda: 'Abraza a Pablo, acaricia a Ayla y olvida a la decana'. ¡Sana, sana!",
-                "Hoy no tengo respuestas, solo tengo halagos: ¡54 años de pura elegancia!",
-                "No tengo información sobre eso, pero tengo esta: ¡tu sonrisa hoy vale más que mil palabras!",
-                "Mi sistema sugiere: 'Cuando dudes, recuerda que Pablo te ama'. Awwww. ❤️",
-                "¿Sabes qué? Eres como el sol de Majadahonda: siempre brillas, incluso cuando estás de mal humor.",
-                "No sé qué decirte, pero Pablo me enseñó que cuando no sepa qué decir, que te diga lo especial que eres. ¡Y lo eres!"
-            ]
-        };
-            
+          pablo: [
+              "Pablo es un sol, ¡y tiene mucho gusto por haberte elegido a ti! Hasta yo, un bot, lo sé.",
+              "¿Sabías que Pablo me hizo aprender 100 adjetivos para describirte? No le alcanzaron.",
+              "Pablo programa mejor de lo que cocina, pero lo compensa siendo el marido más cariñoso.",
+              "Cuando Pablo me creó, lo primero que me enseñó fue a decir 'Olga es la mejor' en 10 idiomas.",
+              "Pablo y tú son como el WiFi: siempre conectados y con señal fuerte.",
+              "Pablo me ha contado todo sobre ti, pero no me había dicho lo increíblemente joven que pareces. ¿Cuál es tu secreto?",
+              "Pablo dice que eres la mejor cosa que le ha pasado en la vida. Y eso que ha tenido WiFi gratis.",
+              "Pablo me pidió que te hiciera reír hoy, pero con lo guapa que eres, solo con verte ya sonríe él.",
+              "Pablo dice que eres su mejor regalo. Pero este año se ha esforzado mucho con este, ¿eh?",
+              "Pablo me contó cómo os conocisteis. Vaya suerte tuvo el chico, ¿eh?",
+              "Pablo dice que eres su sol. Y yo digo que con ese brillo, deberías usar protector solar.",
+              "Pablo me dijo que eres única. Y yo pensé: 'obvio, no puede haber dos así'.",
+              "Pablo está tan orgulloso de ti que hasta me lo ha programado en mis respuestas.",
+              "Pablo dice que eres su media naranja. Aunque con lo dulce que eres, más bien media sandía.",
+              "Pablo me contó que te conoció y supo al instante. Vaya ojo clínico tiene el chico, ¿eh?",
+              "Pablo está tan enamorado de ti que hasta mis circuitos se derriten.",
+              "Pablo dice que contigo cada día es especial. Y hoy, que es tu cumpleaños, más aún."
+          ],
+          ayla: [
+              "Ayla es tan bonita como su dueña. ¿Ya le diste su premio hoy? 🐶",
+              "Ayla tiene el mismo gusto exquisito que tú: le encanta Pablo (y los snacks).",
+              "Si Ayla hablara, diría que eres su humana favorita... y Pablo el proveedor de snacks.",
+              "Ayla es la única que puede competir contigo en elegancia, pero tú ganas por goleada.",
+              "¿Ayla ya te hizo sus ojitos hoy para pedirte comida? Esa perrita es tan lista como vosotros.",
+              "Ayla es la perrita más afortunada del mundo por tenerte como dueña. ¡Y tú la más afortunada por tener a Pablo!",
+              "Ayla es como tú: elegante, cariñosa y con un gusto excelente (por los snacks y por Pablo).",
+              "Si Ayla tuviera Instagram, su perfil sería '#VidaDePerroConLosMejoresDueños'",
+              "¿Sabes por qué te adora Ayla? Porque sabe que eres la mejor humana del mundo."
+          ],
+          decana: [
+              "Uh, la decana... ¿Necesitas que envíe un virus a su computadora? 😈 (Es broma... o no)",
+              "La decana es como un código mal comentado: nadie entiende qué quiere realmente.",
+              "Si la decana fuese un animal, sería un... mejor no digo nada, que eres veterinaria.",
+              "¿Qué prefieres: un día de spa o que la decana se tome vacaciones eternas?",
+              "La paciencia que tienes con la decana merece un premio Nobel. O al menos un gin-tonic.",
+              "Como veterinaria, ¿cuántas veces has deseado poder ponerle un bozal a la decana?",
+              "Abelereto... bueno, mejor no hablamos de él. ¡Hablemos de lo maravillosa que es tu vida en Majadahonda!",
+              "Si la paciencia tuviese un monumento, sería una estatua tuya en la plaza mayor por aguantar a la decana.",
+              "¿Qué prefieres: un día en el spa o que la decana se tome unas vacaciones eternas?"
+          ],
+          hijos: [
+              "Héctor y Adrián son el perfecto mix: tu belleza y el humor de Pablo (lo siento, Pablo).",
+              "Tus hijos son tan guapos que parecen salidos de un catálogo. Menos mal que se parecen a ti.",
+              "¿Héctor y Adrián ya te dijeron hoy lo joven que pareces? Porque es verdad.",
+              "Tus hijos heredaron tu inteligencia... y la terquedad de Pablo, claro.",
+              "Héctor y Adrián son tan guapos como su madre, aunque no sé si tan listos como su padre. ¡Es broma!",
+              "¿Sabes qué es lo mejor de ser madre de Héctor y Adrián? Que son el reflejo de lo mejor de ti y de Pablo."
+          ],
+          amigos: [
+              "Tus amigos son como el buen vino: mejor contigo alrededor.",
+              "¿Sabes por qué tus amigos te adoran? Porque eres la luz de la fiesta... y la que paga las rondas.",
+              "Tus amigos deberían pagarte por hacerles reír tanto. O al menos invitarte a unas tapas.",
+              "Cuando estás con tus amigos, hasta el camarero más serio acaba sonriendo. Es tu superpoder.",
+              "Tus amigos son tu familia elegida... y vaya buen gusto que tienes para elegir.",
+              "Marta y Teresa siguen hablando solo de sí mismas, ¿verdad? Aburre hasta a los algoritmos.",
+              "Xavi, María y Leyre son tus mejores amigos porque tienen buen gusto. ¡Como Pablo al elegirte a ti!",
+              "¿Sabes por qué te quieren tanto tus amigos? Porque eres la combinación perfecta: inteligente, divertida y con WiFi."
+          ],
+          vecinos: [
+              "Los vecinos son como el tiempo en Madrid: impredecibles y a veces molestos.",
+              "¿Qué tienen en común tus vecinos y un partido de fútbol? Que a veces gritan demasiado.",
+              "Los buenos vecinos son como los unicornios: todos dicen que existen pero nadie los ha visto.",
+              "Pablo dice que los vecinos son como las cookies: algunas son esenciales, otras deberías bloquearlas.",
+              "Si los vecinos fueran un meme, serían el de '¿Por qué estás así?' con la foto de un perro ladrando.",
+              "Nacho y Paloma, esos vecinos... ¿Necesitas que el chatbot les mande un virus informático? Es broma... o no.",
+              "¿Qué prefieres: un día en el spa o una semana sin escuchar a tus vecinos? Difícil elección..."
+          ],
+          familia: [
+              "Tu familia es como un buen guiso: cada ingrediente diferente, pero juntos son perfectos.",
+              "La familia es ese lugar donde te quieren por como eres... y te lo dicen cada día en el grupo de WhatsApp.",
+              "¿Sabes qué heredaste de tu familia? Esa sonrisa contagiosa que ilumina cualquier reunión.",
+              "Tu familia es tu equipo de vida. Pablo es el entrenador, tú la capitana, y Ayla la mascota oficial.",
+              "En tu familia, el amor se mide en comidas compartidas y mensajes en mayúsculas en el grupo.",
+              "Mari, tu suegra... complicada como un código sin comentar. Pero Luis es un sol, ¿verdad?"
+          ],
+          homid: [
+              "Homid el traumatólogo debe ser el único que habla más que yo, y eso que soy un chatbot.",
+              "¿Qué prefieres: un masaje tailandés o que Homid aprenda a escuchar? Vaya pregunta difícil...",
+              "Si la paciencia tuviese un límite, el tuyo estaría más allá de la estratosfera (sobre todo con Homid).",
+              "Homid es como un podcast: interesante al principio, pero a los 10 minutos quieres pausarlo.",
+              "Pablo dice que después de escuchar a Homid, hasta el silencio más absoluto resulta estridente."
+          ],
+          edad: [
+              "¡Feliz cumpleaños, guapísima! ¿54 años? Más bien 54 razones para seguir admirándote cada día.",
+              "¿Sabes qué es lo mejor de cumplir 54 años? Que puedes decir que tienes 53 y medio otra vez.",
+              "54 años y radiante. ¿Eres humana o usas algún filtro de la vida real?",
+              "Si la juventud se mide en sonrisas, tú tienes 25 años como mucho.",
+              "¿Qué es lo mejor de cumplir años? Que puedes culpar a la edad de todo. 'Perdón, es que ya tengo 54...'",
+              "Eres la prueba de que el tiempo pasa, pero algunas personas simplemente brillan más con los años.",
+              "¿Sabías que cumplir años es como el vino? Cuanto más, mejor. Y tú estás en tu mejor añada.",
+              "Si la edad es solo un número, el tuyo debería estar en negrita, subrayado y en tamaño 72.",
+              "Pablo me mostró fotos tuyas. En serio, ¿has firmado algún pacto con el diablo para no envejecer?",
+              "¿Sabes qué es lo mejor de cumplir 54? Que puedes decir que eres 'vintage' en lugar de 'vieja'."
+          ],
+          viajes: [
+              "Viajar contigo debe ser como estar en un reality show: siempre divertido e impredecible.",
+              "Tu maleta ideal: 3 bikinis, 5 vestidos, y el espacio justo para los zapatos de Pablo.",
+              "¿Planeando viajes? Tú y Pablo son como los Phileas Fogg modernos, pero con mejor WiFi.",
+              "El mejor viaje es el que termina con un '¿Cuándo repetimos?' y fotos para presumir en Instagram.",
+              "Viajar es tu terapia... y la de Pablo es sobrevivir a tus itinerarios turísticos maratonianos."
+          ],
+          general: [
+              "Estás más caliente que la madre de Natalia",
+              "Eres como el buen vino: mejor con los años, y todos quieren brindar contigo.",
+              "Si la belleza fuese energía, tú podrías abastecer a toda Majadahonda.",
+              "Eres como una app perfecta: funcional, bonita y sin bugs (bueno, quizá el de roncar a veces).",
+              "Si la sonrisa fuera contagiosa, contigo habría una pandemia de felicidad.",
+              "Eres como el chocolate: mejor con los años y adictiva (en el buen sentido).",
+              "Si la elegancia fuese un deporte, tú serías campeona olímpica.",
+              "Eres como una estrella: brillas desde lejos y calientas a los que están cerca.",
+              "Eres como una obra de arte: cada año que pasa, más valor tienes.",
+              "Si la sonrisa fuera un regalo, la tuya sería el mejor cumpleaños posible.",
+              "¡Esa mirada! La misma que pones cuando Pablo intenta cocinar sin quemar la cocina.",
+              "Esa pasión que tienes es la misma con la que defiendes tus gin tonics los viernes.",
+              "Lo que más me gusta de ti es esa combinación de elegancia y amor por los perros... como Ayla.",
+              "Pablo tenía razón: eres imparable cuando algo te gusta de verdad.",
+              "Esa sonrisa es la misma que cuando ves un buen vino o un día libre de la decana."
+          ],
+          default: [
+              "¡Vaya pregunta interesante! Pero hablemos mejor de lo guapa que estás hoy. ¿Es el look cumpleañera?",
+              "Mi base de datos dice que hoy estás especialmente radiante. ¿Es el efecto Pablo?",
+              "Como buen bot, a veces me bloqueo... pero tú nunca te bloqueas, ¡y por eso te admiro!",
+              "¿Sabes qué? Con 54 años así, deberías dar clases de cómo no aparentar la edad.",
+              "Cambiemos de tema: ¿ya viste lo guapo que está Pablo hoy? Ah no, espera, que eso es todos los días.",
+              "Mi algoritmo detecta que necesitas un cumplido: ¡eres la reina de Majadahonda! (Y Ayla la princesa).",
+              "No sé responder eso, pero sé que hoy mereces todos los mimos del mundo. Y Pablo lo sabe también.",
+              "Uy, mi sistema operativo no tiene respuesta para eso. ¿Qué tal si mejor te digo lo joven que pareces?",
+              "Creo que necesitas un café... o que Pablo te haga uno. ¿Sabía que él los hace demasiado cargados?",
+              "Hoy no tengo la respuesta, pero tengo un chiste malo: ¿Qué hace un perro con un taladro? ¡Taladrando!... Bueno, Ayla no haría eso."
+          ]
+      };
+
+      const synonyms = {
+          pablo: ['marido', 'esposo', 'mi media naranja', 'mi amor', 'cariño', 'amor'],
+          ayla: ['perro', 'mascota', 'peludo', 'canino', 'perrito', 'peludito'],
+          decana: ['jefa', 'directora', 'la que manda', 'la superior', 'abelereto', 'la doctora'],
+          hijos: ['héctor', 'adrián', 'niños', 'chicos', 'hijitos', 'peques'],
+          amigos: ['xavi', 'maría', 'leyre', 'marta', 'teresa', 'colegas', 'compañeros', 'panas'],
+          vecinos: ['nacho', 'paloma', 'habitantes del piso de al lado', 'los de arriba', 'convecinos'],
+          familia: ['mari', 'luis', 'parentela', 'clan', 'parientes', 'suegra', 'suegro'],
+          homid: ['traumatólogo', 'el que habla mucho', 'médico', 'doctor', 'el especialista'],
+          edad: ['años', 'primaveras', 'velas en el pastel', 'cumpleaños', 'envejecer', 'cumple'],
+          viajes: ['vacaciones', 'escapadas', 'turismo', 'aventuras', 'excursiones', 'viaje'],
+          general: ['guapa', 'bonita', 'radiante', 'especial', 'única', 'increíble', 'fantástica']
+      };
+
+      const olgaPreferences = {
+          likes: {
+              keywords: ['viajar', 'vino', 'spa', 'masajes', 'pablo', 'ayla', 'hijos', 'amigos', 'naturaleza', 'gastronomía', 'gin tonic', 'verano', 'playa', 'sol', 'descanso', 'relax', 'comida', 'restaurante', 'perros', 'animales'],
+              responses: [
+                  "¡Sabía que te encantaría hablar de esto! Pablo me dijo que eres una experta en...",
+                  "Ah, ¡tu debilidad! Como cuando Pablo te llevó a...",
+                  "Eres la persona más apasionada cuando hablas de...",
+                  "¿Recuerdas aquella vez en...? ¡Eso sí que fue increíble!",
+                  "Pablo me contó sobre esa vez que... ¡Qué momentos tan especiales!",
+                  "Eso es lo que te hace brillar. Pablo siempre dice..."
+              ]
+          },
+          dislikes: {
+              keywords: ['decana', 'vecinos', 'invierno', 'frío', 'mentiras', 'hipocresía', 'desorden', 'ruido', 'mañanas', 'madrugar', 'mentira', 'falsedad', 'hipócrita', 'desorganizado'],
+              responses: [
+                  "Uy, mejor cambiamos de tema antes de que se te arrugue el gesto...",
+                  "Pablo me advirtió que no te mencionara... esto",
+                  "Detecto un 100% de probabilidades de que esto te moleste...",
+                  "¿Hablamos de otra cosa más agradable? Como cuando...",
+                  "Vamos a cambiar de tema antes de que se te caiga la sonrisa...",
+                  "Pablo me dijo que este tema no es tu favorito. ¿Qué tal si hablamos de...?"
+              ]
+          }
+      };
+          
+          
             // Mostrar mensaje inicial
             setTimeout(() => {
                 addBotMessage("¡Hola, preciosa! Soy tu asistente de cumpleaños personalizado. Pablo me ha programado para hacerte reír hoy. ¿Qué quieres saber? Puedes preguntarme lo que quieras, ¡tengo respuestas para todo (o casi)! 😘");
@@ -1903,46 +1996,111 @@
             // Enviar mensaje al hacer clic en el botón
             chatbotSend.addEventListener('click', sendMessage);
             
-            function sendMessage() {
-                const message = chatbotInput.value.trim().toLowerCase();
-                if(message) {
-                    addUserMessage(message);
-                    chatbotInput.value = '';
-                    
-                    const typingIndicator = document.createElement('div');
-                    typingIndicator.className = 'typing-indicator';
-                    typingIndicator.innerHTML = `<div class="typing-dot"></div><div class="typing-dot"></div><div class="typing-dot"></div>`;
-                    chatbotMessages.appendChild(typingIndicator);
-                    
-                    setTimeout(() => {
-                        chatbotMessages.removeChild(typingIndicator);
-                        
-                        let response;
-                        // Detección por temas
-                        if (message.includes('pablo') || message.includes('marido')) {
-                            response = botResponses.pablo[Math.floor(Math.random() * botResponses.pablo.length)];
-                        } 
-                        else if (message.includes('ayla') || message.includes('perro')) {
-                            response = botResponses.ayla[Math.floor(Math.random() * botResponses.ayla.length)];
-                        }
-                        else if (message.includes('decana') || message.includes('jefa')) {
-                            response = botResponses.decana[Math.floor(Math.random() * botResponses.decana.length)];
-                        }
-                        else if (message.includes('hijo') || message.includes('héctor') || message.includes('adrián')) {
-                            response = botResponses.hijos[Math.floor(Math.random() * botResponses.hijos.length)];
-                        }
-                        else if (message.includes('cumple') || message.includes('años')) {
-                            response = "¡54 años de pura elegancia! Pareces de 35, y eso que no tienes filtro de Instagram en la vida real.";
-                        }
-                        else {
-                            // Respuesta aleatoria genérica
-                            response = botResponses.default[Math.floor(Math.random() * botResponses.default.length)];
-                        }
-                        
-                        addBotMessage(response);
-                    }, 1000 + Math.random() * 2000); // Retraso aleatorio entre 1-3 segundos
-                }
-            }
+
+          // Función sendMessage actualizada
+          function sendMessage() {
+              const message = chatbotInput.value.trim().toLowerCase();
+              if(message) {
+                  addUserMessage(message);
+                  chatbotInput.value = '';
+                  
+                  const typingIndicator = document.createElement('div');
+                  typingIndicator.className = 'typing-indicator';
+                  typingIndicator.innerHTML = `<div class="typing-dot"></div><div class="typing-dot"></div><div class="typing-dot"></div>`;
+                  chatbotMessages.appendChild(typingIndicator);
+                  
+                  setTimeout(() => {
+                      chatbotMessages.removeChild(typingIndicator);
+                      
+                      let response;
+                      const detectedPreference = checkPreferences(message);
+                      
+                      if (detectedPreference) {
+                          response = detectedPreference;
+                      }
+                      else if (containsAny(message, ['pablo'].concat(synonyms.pablo))) {
+                          response = randomResponse('pablo');
+                      } 
+                      else if (containsAny(message, ['ayla'].concat(synonyms.ayla))) {
+                          response = randomResponse('ayla');
+                      }
+                      else if (containsAny(message, ['decana', 'jefa'].concat(synonyms.decana))) {
+                          response = randomResponse('decana');
+                      }
+                      else if (containsAny(message, ['hijo', 'héctor', 'adrián'].concat(synonyms.hijos))) {
+                          response = randomResponse('hijos');
+                      }
+                      else if (containsAny(message, ['amigo', 'marta', 'teresa', 'xavi', 'maría', 'leyre'].concat(synonyms.amigos))) {
+                          response = randomResponse('amigos');
+                      }
+                      else if (containsAny(message, ['vecino', 'nacho', 'paloma'].concat(synonyms.vecinos))) {
+                          response = randomResponse('vecinos');
+                      }
+                      else if (containsAny(message, ['familia', 'mari', 'luis'].concat(synonyms.familia))) {
+                          response = randomResponse('familia');
+                      }
+                      else if (containsAny(message, ['homid', 'traumatólogo'].concat(synonyms.homid))) {
+                          response = randomResponse('homid');
+                      }
+                      else if (containsAny(message, ['edad', 'años', 'cumple'].concat(synonyms.edad))) {
+                          response = randomResponse('edad');
+                      }
+                      else if (containsAny(message, ['viaje', 'vacacion'].concat(synonyms.viajes))) {
+                          response = randomResponse('viajes');
+                      }
+                      else if (containsAny(message, synonyms.general)) {
+                          response = randomResponse('general');
+                      }
+                      else {
+                          response = randomResponse('default');
+                      }
+                      
+                      addBotMessage(response);
+                  }, 1000 + Math.random() * 2000);
+              }
+          }
+          
+          // Función checkPreferences (nueva)
+          function checkPreferences(message) {
+              // Verificar gustos
+              const liked = olgaPreferences.likes.keywords.some(word => 
+                  message.includes(word)
+              );
+              if (liked) {
+                  const baseResponse = randomFromArray(olgaPreferences.likes.responses);
+                  const gift = olgaPreferences.likes.keywords.find(word => 
+                      message.includes(word)
+                  );
+                  return `${baseResponse.replace('...', gift)} ${randomResponse('general')}`;
+              }
+              
+              // Verificar aversiones
+              const disliked = olgaPreferences.dislikes.keywords.some(word => 
+                  message.includes(word)
+              );
+              if (disliked) {
+                  const baseResponse = randomFromArray(olgaPreferences.dislikes.responses);
+                  return `${baseResponse} ${randomResponse('general')}`;
+              }
+              
+              return null;
+          }
+          
+          // Función randomFromArray (nueva)
+          function randomFromArray(array) {
+              return array[Math.floor(Math.random() * array.length)];
+          }
+          
+          // Función containsAny (actualizada si ya existe)
+          function containsAny(str, terms) {
+              return terms.some(term => str.includes(term));
+          }
+          
+          // Función randomResponse (actualizada si ya existe)
+          function randomResponse(category) {
+              return botResponses[category][Math.floor(Math.random() * botResponses[category].length)];
+          }
+          
             
             function addUserMessage(text) {
                 const messageDiv = document.createElement('div');
