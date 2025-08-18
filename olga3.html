@@ -773,6 +773,38 @@
             animation-delay: 0.4s;
         }
 
+
+        /* Heart button styles */
+        .heart-button {
+            background: var(--vino);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 80px;
+            height: 80px;
+            font-size: 2rem;
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin: 20px auto;
+            transition: all 0.3s;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        }
+        
+        .heart-button:hover {
+            transform: scale(1.1);
+            background: #8b0000;
+        }
+        
+        .heart-text {
+            font-size: 0.8rem;
+            margin-top: 5px;
+            font-family: 'Raleway', sans-serif;
+            font-weight: 600;
+        }
+        
         @keyframes typing {
             0%, 60%, 100% { transform: translateY(0); }
             30% { transform: translateY(-5px); }
