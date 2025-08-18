@@ -1519,14 +1519,14 @@
             collage.innerHTML = '';
             
             // Asumimos que hay 60 imágenes en la carpeta images con nombres secuenciales
-            const totalImages = 60;
-            const imagesToShow = 30; // Mostrar solo un subconjunto para mejor rendimiento
+            const totalImages = 44;
+            const imagesToShow = 10; // Mostrar solo un subconjunto para mejor rendimiento
             
             // Seleccionar imágenes aleatorias
             const selectedImages = [];
             for (let i = 0; i < imagesToShow; i++) {
                 const randomNum = Math.floor(Math.random() * totalImages) + 1;
-                selectedImages.push(`images/image${randomNum}.webp`);
+                selectedImages.push(`images/IMG_${randomNum}.webp`);
             }
             
             // Crear elementos de imagen con clases aleatorias para diferentes tamaños
