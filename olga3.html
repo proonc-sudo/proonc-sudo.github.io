@@ -1798,95 +1798,86 @@
             const chatbotSend = document.getElementById('chatbot-send');
             
             // Lista de respuestas divertidas y personalizadas
-            const botResponses = [
-                "¡Feliz cumpleaños, guapísima! ¿54 años? Más bien 54 razones para seguir admirándote cada día.",
-                "Pablo me ha contado todo sobre ti, pero no me había dicho lo increíblemente joven que pareces. ¿Cuál es tu secreto?",
-                "Ayla es la perrita más afortunada del mundo por tenerte como dueña. ¡Y tú la más afortunada por tener a Pablo!",
-                "Nacho y Paloma, esos vecinos... ¿Necesitas que el chatbot les mande un virus informático? Es broma... o no.",
-                "Marta y Teresa siguen hablando solo de sí mismas, ¿verdad? Aburre hasta a los algoritmos.",
-                "Abelereto... bueno, mejor no hablamos de él. ¡Hablemos de lo maravillosa que es tu vida en Majadahonda!",
-                "Homid el traumatólogo debe ser el único que habla más que yo, y eso que soy un chatbot.",
-                "Xavi, María y Leyre son tus mejores amigos porque tienen buen gusto. ¡Como Pablo al elegirte a ti!",
-                "Mari, tu suegra... complicada como un código sin comentar. Pero Luis es un sol, ¿verdad?",
-                "Héctor y Adrián son tan guapos como su madre, aunque no sé si tan listos como su padre. ¡Es broma!",
-                "¿Sabes qué es lo mejor de cumplir 54 años? Que puedes decir que tienes 53 y medio otra vez.",
-                "Como veterinaria, ¿cuántas veces has deseado poder ponerle un bozal a la decana?",
-                "Pablo me pidió que te hiciera reír hoy, pero con lo guapa que eres, solo con verte ya sonríe él.",
-                "¿Qué prefieres: un día en el spa o una semana sin escuchar a tus vecinos? Difícil elección...",
-                "Si la juventud se mide en sonrisas, tú tienes 25 años como mucho.",
+        const botResponses = {
+            pablo: [
+                "Pablo es un sol, ¡y tiene mucho gusto por haberte elegido a ti! Hasta yo, un bot, lo sé.",
+                "¿Sabías que Pablo me hizo aprender 100 adjetivos para describirte? No le alcanzaron.",
+                "Pablo programa mejor de lo que cocina, pero lo compensa siendo el marido más cariñoso.",
+                "Cuando Pablo me creó, lo primero que me enseñó fue a decir 'Olga es la mejor' en 10 idiomas.",
+                "Pablo y tú son como el WiFi: siempre conectados y con señal fuerte."
+            ],
+            ayla: [
+                "Ayla es tan bonita como su dueña. ¿Ya le diste su premio hoy? 🐶",
+                "Ayla tiene el mismo gusto exquisito que tú: le encanta Pablo (y los snacks).",
+                "Si Ayla hablara, diría que eres su humana favorita... y Pablo el proveedor de snacks.",
                 "Ayla es la única que puede competir contigo en elegancia, pero tú ganas por goleada.",
-                "¿Qué tienen en común tú y un buen vino? Que con los años mejoráis, claro.",
-                "Pablo dice que eres la mejor cosa que le ha pasado en la vida. Y eso que ha tenido WiFi gratis.",
-                "54 años y radiante. ¿Eres humana o usas algún filtro de la vida real?",
-                "Si la belleza fuese delito, estarías cumpliendo cadena perpetua.",
-                "¿Sabías que cumplir años es como el vino? Cuanto más, mejor. Y tú estás en tu mejor añada.",
-                "Pablo me dijo: 'Hazla reír'. Pero con esa sonrisa, más bien deberías hacerme reír a mí.",
-                "¿Qué es mejor: tu sentido del humor o tu paciencia con la decana? Difícil decisión.",
-                "Si la edad es solo un número, el tuyo debería estar en negrita, subrayado y en tamaño 72.",
-                "Eres tan joven que cuando naciste, el calendario todavía no había inventado los cumpleaños.",
-                "Pablo me mostró fotos tuyas. En serio, ¿has firmado algún pacto con el diablo para no envejecer?",
-                "¿Sabes por qué te quieren tanto tus amigos? Porque eres la combinación perfecta: inteligente, divertida y con WiFi.",
-                "Si la belleza diera puntos en el carné, tú tendrías que estar pagando multas por exceso.",
-                "¿Qué prefieres: que te digan que pareces de 40 o que reconocer que a los 40 estabas aún mejor?",
-                "Pablo dice que eres su mejor regalo. Pero este año se ha esforzado mucho con este, ¿eh?",
-                "Eres tan especial que hasta los algoritmos se quedan sin palabras cuando te analizan.",
-                "Si la edad es sabiduría, tú deberías estar dando clases en Harvard.",
-                "¿Qué es lo mejor de cumplir años? Que puedes culpar a la edad de todo. 'Perdón, es que ya tengo 54...'",
-                "Pablo me contó cómo os conocisteis. Vaya suerte tuvo el chico, ¿eh?",
-                "Eres la prueba de que el tiempo pasa, pero algunas personas simplemente brillan más con los años.",
-                "Si la sonrisa quemara calorías, estarías en forma solo por soportar a la decana.",
-                "¿Qué es lo que más te gusta de tus 54 años? ¿Que puedes decir 'a mi edad' con toda la autoridad?",
-                "Pablo me pidió que te hiciera reír, pero con lo guapa que estás, me estoy poniendo nervioso.",
-                "Eres como el buen vino: mejor con los años, y todos quieren probarte.",
-                "¿Sabías que cumplir años es obligatorio, pero envejecer es opcional? Tú claramente elegiste la opción B.",
-                "Pablo dice que eres su sol. Y yo digo que con ese brillo, deberías usar protector solar.",
-                "Si la belleza fuese energía, tú podrías abastecer a toda Majadahonda.",
-                "¿Qué es mejor: tu paciencia con los animales o tu paciencia con los humanos? Los animales ganan, ¿no?",
-                "Eres tan radiante que hasta los emoticonos de sol se sienten avergonzados.",
-                "Pablo me dijo que eres única. Y yo pensé: 'obvio, no puede haber dos así'.",
-                "Si la edad es un estado mental, tú estás en permanente estado de gracia.",
-                "¿Sabes qué es lo mejor de cumplir 54? Que puedes decir que eres 'vintage' en lugar de 'vieja'.",
-                "Pablo está tan orgulloso de ti que hasta me lo ha programado en mis respuestas.",
-                "Eres como una app perfecta: funcional, bonita y sin bugs (bueno, quizá el de roncar a veces).",
-                "Si la sonrisa fuera contagiosa, contigo habría una pandemia de felicidad.",
-                "¿Qué prefieres: un masaje tailandés o una tarde sin que te hablen de sus problemas? Difícil elección...",
-                "Pablo dice que eres su media naranja. Aunque con lo dulce que eres, más bien media sandía.",
-                "Eres tan especial que hasta los emoticonos se quedan cortos para describirte.",
-                "Si la paciencia tuviese un límite, el tuyo estaría más allá de la estratosfera.",
-                "¿Sabes por qué te quieren tanto tus hijos? Porque heredaron tu belleza y el humor de Pablo (lo siento, Pablo).",
-                "Pablo me contó que te conoció y supo al instante. Vaya ojo clínico tiene el chico, ¿eh?",
-                "Eres como un buen café: fuerte, dulce y capaz de animar el día a cualquiera.",
-                "Si la elegancia fuese un deporte, tú serías campeona olímpica.",
-                "¿Qué es lo mejor de cumplir años? Que puedes decir 'eso no lo hago' y nadie te discute.",
-                "Pablo dice que eres perfecta. Y yo, que soy objetivo, digo que se queda corto.",
-                "Eres como el WiFi: todos quieren estar conectados a ti.",
-                "Si la belleza fuese moneda, tú serías el Banco Central de la hermosura.",
-                "¿Sabes qué es lo mejor de ser veterinaria? Que los animales nunca te dicen 'es que en mi anterior veterinario...'",
-                "Pablo está tan enamorado de ti que hasta mis circuitos se derriten.",
-                "Eres como una estrella: brillas desde lejos y calientas a los que están cerca.",
-                "Si la paciencia tuviese un monumento, sería una estatua tuya en la plaza mayor.",
-                "¿Qué prefieres: un día en el spa o que la decana se tome unas vacaciones eternas?",
-                "Pablo dice que contigo cada día es especial. Y hoy, que es tu cumpleaños, más aún.",
-                "Eres como el chocolate: mejor con los años y adictiva (en el buen sentido).",
-                "Si la sonrisa fuera música, la tuya sería una sinfonía.",
-                "¿Sabes por qué te adora Ayla? Porque sabe que eres la mejor humana del mundo.",
-                "Pablo me pidió que te hiciera feliz hoy. Pero con lo feliz que le haces tú a él cada día, el trabajo está hecho.",
-                "Eres como un buen libro: interesante, llena de capítulos maravillosos y que mejora con el tiempo.",
-                "Si la elegancia tuviese nombre, se llamaría Olga. Y si la paciencia también, también se llamaría Olga.",
-                "¿Qué es lo mejor de cumplir 54? Que puedes decir 'eso ya lo viví' con toda autoridad.",
-                "Pablo dice que eres su todo. Y yo digo que con ese todo, tiene más que suficiente.",
-                "Eres como el sol de Majadahonda: siempre brillante y a veces demasiado caliente (en el buen sentido).",
-                "Si la belleza fuese un superpoder, tú serías Wonder Woman. Y la decana sería... mejor no digo.",
-                "¿Sabes qué es lo mejor de ser madre de Héctor y Adrián? Que son el reflejo de lo mejor de ti y de Pablo.",
-                "Pablo está tan orgulloso de ti que hasta me ha programado para decírtelo cada 5 minutos.",
-                "Eres como un buen vino: mejor con los años, y todos quieren brindar contigo.",
-                "Si la paciencia fuese un músculo, el tuyo sería el de un atleta olímpico.",
-                "¿Qué prefieres: un día de spa o que Homid aprenda a escuchar? Vaya pregunta difícil...",
-                "Pablo dice que contigo aprendió el significado de la felicidad. Y yo aprendí el de la envidia (sana).",
-                "Eres como una obra de arte: cada año que pasa, más valor tienes.",
-                "Si la sonrisa fuera un regalo, la tuya sería el mejor cumpleaños posible.",
-                "¿Sabes por qué eres especial? Porque haces que los 54 parezcan los nuevos 30. ¡Feliz cumpleaños!"
-            ];
+                "¿Ayla ya te hizo sus ojitos hoy para pedirte comida? Esa perrita es tan lista como vosotros."
+            ],
+            decana: [
+                "Uh, la decana... ¿Necesitas que envíe un virus a su computadora? 😈 (Es broma... o no)",
+                "La decana es como un código mal comentado: nadie entiende qué quiere realmente.",
+                "Si la decana fuese un animal, sería un... mejor no digo nada, que eres veterinaria.",
+                "¿Qué prefieres: un día de spa o que la decana se tome vacaciones eternas?",
+                "La paciencia que tienes con la decana merece un premio Nobel. O al menos un gin-tonic."
+            ],
+            hijos: [
+                "Héctor y Adrián son el perfecto mix: tu belleza y el humor de Pablo (lo siento, Pablo).",
+                "Tus hijos son tan guapos que parecen salidos de un catálogo. Menos mal que se parecen a ti.",
+                "¿Héctor y Adrián ya te dijeron hoy lo joven que pareces? Porque es verdad.",
+                "Tus hijos heredaron tu inteligencia... y la terquedad de Pablo, claro."
+            ],
+            default: [
+                // ===== 50 RESPUESTAS GENÉRICAS NUEVAS =====
+                "¡Vaya pregunta interesante! Pero hablemos mejor de lo guapa que estás hoy. ¿Es el look cumpleañera?",
+                "Mi base de datos dice que hoy estás especialmente radiante. ¿Es el efecto Pablo?",
+                "Como buen bot, a veces me bloqueo... pero tú nunca te bloqueas, ¡y por eso te admiro!",
+                "¿Sabes qué? Con 54 años así, deberías dar clases de cómo no aparentar la edad.",
+                "Cambiemos de tema: ¿ya viste lo guapo que está Pablo hoy? Ah no, espera, que eso es todos los días.",
+                "Mi algoritmo detecta que necesitas un cumplido: ¡eres la reina de Majadahonda! (Y Ayla la princesa).",
+                "No sé responder eso, pero sé que hoy mereces todos los mimos del mundo. Y Pablo lo sabe también.",
+                "Uy, mi sistema operativo no tiene respuesta para eso. ¿Qué tal si mejor te digo lo joven que pareces?",
+                "Creo que necesitas un café... o que Pablo te haga uno. ¿Sabía que él los hace demasiado cargados?",
+                "Hoy no tengo la respuesta, pero tengo un chiste malo: ¿Qué hace un perro con un taladro? ¡Taladrando!... Bueno, Ayla no haría eso.",
+                "Mejor hablemos de lo bien que te queda ese color. ¿Es nuevo o es tu aura de cumpleañera?",
+                "Mi intuición dice que necesitas un abrazo de Pablo. O de Ayla. O de los tres a la vez.",
+                "No tengo datos sobre eso, pero sé que con ese pelo hoy, podrías ser modelo de anuncio de champú.",
+                "¿Qué diría Pablo si le preguntamos eso? Seguro algo ingenioso... o un chiste de informático.",
+                "Mi sistema sugiere cambiar de tema: ¿ya te felicitaron Héctor y Adrián? Seguro que con mucho estilo.",
+                "No tengo esa información, pero tengo esta: ¡tienes el récord de ser la más elegante en tus 54!",
+                "Creo que necesitas un descanso... y que Pablo te traiga un helado. ¿De qué sabor te gustan?",
+                "Mi base de datos solo contiene halagos para ti: hoy estás ¡brillante como un sol!",
+                "No sé responder eso, pero sé que tu sonrisa hoy ilumina más que la pantalla de mi chatbot.",
+                "Hablemos mejor de lo increíble que es tu vida en Majadahonda... menos los vecinos, claro.",
+                "Mi programador (Pablo) no me enseñó eso, pero sí me enseñó a admirarte. ¡Misión cumplida!",
+                "¿Sabes qué? Eres como el buen vino: mejor con los años y todos quieren brindar contigo.",
+                "No tengo la respuesta, pero tengo un dato curioso: ¡Pablo sonríe 300% más cuando estás tú!",
+                "Mi sistema detecta que hoy mereces que Pablo te haga masajes en los pies. ¿Ya se lo pediste?",
+                "No sé qué decirte, pero sé que con ese outfit hoy, hasta Ayla te mira con admiración.",
+                "Mejor hablemos de tus planes hoy: ¿spa, cena romántica o evitar a los vecinos? Las tres, ¿no?",
+                "Mi algoritmo de cumpleaños dice que hoy solo debes recibir halagos. ¡Empezando por los míos!",
+                "No conozco la respuesta, pero conozco esto: ¡nadie celebra un cumple como tú!",
+                "¿Qué tal si en lugar de eso te digo lo increíble que es tu sentido del humor? Pablo tiene suerte.",
+                "Mi base de datos sugiere: 'Cuando no sepas qué decir, halaga a Olga'. ¡Funciona!",
+                "No tengo info sobre eso, pero tengo esta: ¡eres la reina del multitasking! Familia, trabajo, mascotas...",
+                "Hoy mi mejor respuesta es: ¡Pablo te adora! (Y yo también, en modo bot, claro).",
+                "Mi sistema propone cambiar de tema: ¿ya viste lo bonita que está Ayla hoy? Bueno, igual que siempre.",
+                "No sé qué contestar, pero sé que con esa energía hoy, podrías gobernar el mundo. O al menos Majadahonda.",
+                "¿Sabes qué? Eres como el WiFi: todos quieren conectarse a tu buena vibra.",
+                "Mi programación me obliga a decirte: ¡54 años nunca se vieron tan bien!",
+                "No tengo datos sobre eso, pero tengo estos: ¡Pablo + Olga = Mejor pareja del universo!",
+                "Hoy mi respuesta oficial es: *modo cumpleaños activado*. ¡Disfruta tu día!",
+                "No conozco la respuesta, pero conozco esta verdad: ¡tu familia es el mejor regalo! (Y Ayla también).",
+                "Mi sensor detecta que necesitas un gin-tonic... o que Pablo te haga reír. ¿Qué prefieres?",
+                "¿Sabes qué? Eres como una app perfecta: funcional, bonita y sin bugs (bueno, quizá el de roncar a veces).",
+                "No sé responder eso, pero sé que hoy estás más radiante que la pantalla de un iPhone nuevo.",
+                "Mi base de datos recomienda: 'Abraza a Pablo, acaricia a Ayla y olvida a la decana'. ¡Sana, sana!",
+                "Hoy no tengo respuestas, solo tengo halagos: ¡54 años de pura elegancia!",
+                "No tengo información sobre eso, pero tengo esta: ¡tu sonrisa hoy vale más que mil palabras!",
+                "Mi sistema sugiere: 'Cuando dudes, recuerda que Pablo te ama'. Awwww. ❤️",
+                "¿Sabes qué? Eres como el sol de Majadahonda: siempre brillas, incluso cuando estás de mal humor.",
+                "No sé qué decirte, pero Pablo me enseñó que cuando no sepa qué decir, que te diga lo especial que eres. ¡Y lo eres!"
+            ]
+        };
             
             // Mostrar mensaje inicial
             setTimeout(() => {
@@ -1913,28 +1904,43 @@
             chatbotSend.addEventListener('click', sendMessage);
             
             function sendMessage() {
-                const message = chatbotInput.value.trim();
+                const message = chatbotInput.value.trim().toLowerCase();
                 if(message) {
                     addUserMessage(message);
                     chatbotInput.value = '';
                     
-                    // Mostrar indicador de que el bot está escribiendo
                     const typingIndicator = document.createElement('div');
                     typingIndicator.className = 'typing-indicator';
-                    typingIndicator.innerHTML = `
-                        <div class="typing-dot"></div>
-                        <div class="typing-dot"></div>
-                        <div class="typing-dot"></div>
-                    `;
+                    typingIndicator.innerHTML = `<div class="typing-dot"></div><div class="typing-dot"></div><div class="typing-dot"></div>`;
                     chatbotMessages.appendChild(typingIndicator);
-                    chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
                     
-                    // Responder después de un breve retraso
                     setTimeout(() => {
                         chatbotMessages.removeChild(typingIndicator);
-                        const randomResponse = botResponses[Math.floor(Math.random() * botResponses.length)];
-                        addBotMessage(randomResponse);
-                    }, 1000 + Math.random() * 2000);
+                        
+                        let response;
+                        // Detección por temas
+                        if (message.includes('pablo') || message.includes('marido')) {
+                            response = botResponses.pablo[Math.floor(Math.random() * botResponses.pablo.length)];
+                        } 
+                        else if (message.includes('ayla') || message.includes('perro')) {
+                            response = botResponses.ayla[Math.floor(Math.random() * botResponses.ayla.length)];
+                        }
+                        else if (message.includes('decana') || message.includes('jefa')) {
+                            response = botResponses.decana[Math.floor(Math.random() * botResponses.decana.length)];
+                        }
+                        else if (message.includes('hijo') || message.includes('héctor') || message.includes('adrián')) {
+                            response = botResponses.hijos[Math.floor(Math.random() * botResponses.hijos.length)];
+                        }
+                        else if (message.includes('cumple') || message.includes('años')) {
+                            response = "¡54 años de pura elegancia! Pareces de 35, y eso que no tienes filtro de Instagram en la vida real.";
+                        }
+                        else {
+                            // Respuesta aleatoria genérica
+                            response = botResponses.default[Math.floor(Math.random() * botResponses.default.length)];
+                        }
+                        
+                        addBotMessage(response);
+                    }, 1000 + Math.random() * 2000); // Retraso aleatorio entre 1-3 segundos
                 }
             }
             
